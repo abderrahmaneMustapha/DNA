@@ -1,0 +1,5 @@
+"name","type","length","leftDigits","rightDigits"
+"Code_fillière","INTEGER","2","2","0"
+"Fillière","STRING","25","0","0"
+"FillièreAr","STRING","25","0","0"
+"Descriptif","STRING","40","0","0"

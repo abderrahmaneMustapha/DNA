@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"Réf_Type","INTEGER","1","1","0"
+"Type","STRING","9","0","0"
+"Type_Ar","STRING","6","0","0"

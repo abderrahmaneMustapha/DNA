@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"Réf_Fonction","INTEGER","2","2","0"
+"Fonction","STRING","41","0","0"
+"Fonction_Ar","STRING","10","0","0"

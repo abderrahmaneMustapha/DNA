@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"AnnéeEnLettre","STRING","11","0","0"
+"AnnéeEnChiffre","INTEGER","1","1","0"
+"AnnéeEnLettreAr","STRING","13","0","0"

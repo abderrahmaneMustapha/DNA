@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"code_conge","INTEGER","2","2","0"
+"designation_conge","STRING","29","0","0"
+"designation_conge_Ar","STRING","19","0","0"

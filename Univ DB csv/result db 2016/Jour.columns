@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"Jour","STRING","8","0","0"
+"Réf","INTEGER","1","1","0"
+"Jour_Ar","STRING","8","0","0"

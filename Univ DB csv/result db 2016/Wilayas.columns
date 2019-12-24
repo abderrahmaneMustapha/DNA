@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"Code_wilaya","INTEGER","2","2","0"
+"wilaya","STRING","14","0","0"
+"Wilaya_ar","STRING","12","0","0"

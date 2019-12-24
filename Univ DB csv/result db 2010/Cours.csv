@@ -1,0 +1,103 @@
+Réf_Cours,Cours,Coef,VExm,VRttrpg,TD,VTD,TP,VTP,Seminaire,VSem,Conférence,VConf,Stage,VStg,Projet,VPrj,Autre_CTL,VCTL,Année,AnnéeEtude,CycleEtude,FilièreEtude,Nbreemd,semestre,credit,coefExam,coefCC,codeUE,Obligatoire,PwCours,MatSaisie,requise,mode_calcul_rat
+Agl,Anglais,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS172,1,MIAS,17,0,2,2.0,100.0,0.0,UED23,true,lmd,false,false,1
+AGR,Application Graphes à la RO,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,2.5,60.0,40.0,ROP,true,lmd,false,true,1
+ALG1,Algèbre 1,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS171,1,MIAS,17,1,1,3.0,66.0,34.0,UEF11,true,lmd,false,true,1
+ALG3,Algèbre 3,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS183,2,MIAS,18,1,3,4.0,60.0,40.0,MG7,true,lmd,false,true,1
+ALG4,ALgèbre 4,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS184,2,MIAS,18,1,4,4.0,60.0,40.0,MG10,true,lmd,false,true,1
+Algé2,Algébre 2,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS172,1,MIAS,17,1,2,4.0,66.0,34.0,UEF21,true,lmd,false,true,1
+ALGO,Algorithmique,5,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,2MIAS173,2,MIAS,17,2,3,5.0,50.0,50.0,UEIN1,true,lmd,false,true,1
+Algo2,Algorithmique 2,5,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,2MIAS174,2,MIAS,17,2,4,5.0,50.0,50.0,UEIN4,true,lmd,false,true,1
+Aly2,Analyse 2,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS172,1,MIAS,17,1,2,4.0,66.0,34.0,UEF21,true,lmd,false,true,1
+AN,Analyse/Numérique,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS173,2,MIAS,17,1,3,4.0,66.0,34.0,UEIN2,true,lmd,false,true,1
+Analy,Analyse 1,2,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS171,1,MIAS,17,1,1,6.0,66.0,34.0,UEF11,true,lmd,false,true,1
+ANG,Anglais,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS173,2,MIAS,17,0,3,2.0,100.0,0.0,UEIN3,true,lmd,false,false,1
+ANG2,Anglais 2,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS174,2,MIAS,17,0,4,2.0,100.0,0.0,UEIN6,true,lmd,false,false,1
+ANL3,Analyse 3,2,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS183,2,MIAS,18,1,3,6.0,60.0,40.0,MG7,true,lmd,false,true,1
+ANL4,Analyse 4,2,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS184,2,MIAS,18,1,4,6.0,60.0,40.0,MG10,true,lmd,false,true,1
+ANLC,Analyse Complexe,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS184,2,MIAS,18,1,4,4.0,60.0,40.0,MG10,true,lmd,false,true,1
+ANN1,Analyse Numérique 1,2,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,2MIAS183,2,MIAS,18,2,3,5.0,60.0,40.0,MG8,true,lmd,false,false,1
+ANN2,Analyse Numérique 2,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS184,2,MIAS,18,1,4,5.0,60.0,40.0,MG11,true,lmd,false,false,1
+APMD,Applic Mat aux Autre Disciplin,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS184,2,MIAS,18,1,4,3.0,60.0,40.0,MG12,true,lmd,false,false,1
+APN,Anlgais Premier Niveau,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,0,1,2.5,100.0,0.0,ANG,true,lmd,false,false,1
+ARCH,Arch/Ordinateur,5,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS173,2,MIAS,17,1,3,5.0,66.0,34.0,UEIN1,true,lmd,false,true,1
+B-D,Base des Données,6,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,2MIAS174,2,MIAS,17,2,4,6.0,50.0,50.0,UEIN4,true,lmd,false,true,1
+BDD,Base de données Ava et Datamin,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,0,1,2.5,100.0,0.0,BSE,false,lmd,false,false,1
+BDD-A,Bases de données avancées,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS176,3,MIAS,17,0,6,5.0,100.0,0.0,UE15,false,lmd,false,true,1
+CF,Calcul formel,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS172,1,MIAS,17,1,2,3.0,66.0,34.0,UEF22,true,lmd,false,true,1
+Chim,Chimie ,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS171,1,MIAS,17,1,1,3.0,66.0,34.0,UED,true,lmd,false,false,1
+Comp,Compilation,1,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,3MIAS175,3,MIAS,17,2,5,6.0,50.0,50.0,UE13,true,lmd,false,true,1
+crypt,Cryptographie,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS175,3,MIAS,17,0,5,4.0,100.0,0.0,UE14,false,lmd,false,true,1
+DIG,Dev. d`Interface Graphique,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS175,3,MIAS,17,0,5,4.0,100.0,0.0,UE14,false,lmd,false,true,1
+ELE,E_Learning,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,2.5,60.0,40.0,BSE,false,lmd,false,false,1
+Elect,Electricité,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS171,1,MIAS,17,1,1,3.0,66.0,34.0,UED,true,lmd,false,false,1
+G-L,Génie Logiciel,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS174,2,MIAS,17,1,4,4.0,66.0,34.0,UEIN5,true,lmd,false,true,1
+GEOM,Géométrie,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS184,2,MIAS,18,1,4,4.0,60.0,40.0,MG11,true,lmd,false,false,1
+His-s,Histoire des sciences ,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS172,1,MIAS,17,0,2,2.0,100.0,0.0,UED23,true,lmd,false,false,1
+HISM,Histoire des Mathématiques,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS183,2,MIAS,18,1,3,2.0,60.0,40.0,MG9,true,lmd,false,false,1
+I G C,Ingenirie des Connaissances,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS175,3,MIAS,17,0,5,4.0,100.0,0.0,UE14,false,lmd,false,true,1
+info,Informatique 1,2,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,1MIAS171,1,MIAS,17,2,1,6.0,50.0,50.0,UEF11,true,lmd,false,true,1
+Info2,Informatique 2,2,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,1MIAS172,1,MIAS,17,2,2,6.0,50.0,50.0,UEF22,true,lmd,false,true,1
+ITM,I-T-Management ,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS173,2,MIAS,17,0,3,2.0,100.0,0.0,UEIN3,true,lmd,false,false,1
+L-M,Logique Mathématique ,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS173,2,MIAS,17,1,3,4.0,66.0,34.0,UEIN2,true,lmd,false,true,1
+LANE,Languages évolués ,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS183,2,MIAS,18,1,3,4.0,60.0,40.0,MG8,true,lmd,false,false,1
+LIA,Logique P/ Intéligence Artific,1.25,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,3.5,60.0,40.0,LCO,true,lmd,false,true,1
+LOGM,Logique Mathématiques,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS183,2,MIAS,18,1,3,4.0,60.0,40.0,MG8,true,lmd,false,false,1
+Mecaq,Mécanique,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS171,1,MIAS,17,1,1,3.0,66.0,34.0,UED,true,lmd,false,false,1
+MFO,Méthodes Formelles et OV ,1.25,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,3.0,60.0,40.0,MVS,true,lmd,false,false,1
+MOM,Méthodes et outils de Modélisa,1.5,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,3.5,60.0,40.0,MVS,true,lmd,false,false,1
+ORO,Optimisation en recherche Opér,1.5,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,3.5,60.0,40.0,ROP,true,lmd,false,true,1
+P-L,Programmation Linéaire,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS174,2,MIAS,17,1,4,4.0,66.0,34.0,UEIN5,true,lmd,false,true,1
+P-S,Probabilité/Statistique ,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS173,2,MIAS,17,1,3,4.0,66.0,34.0,UEIN2,true,lmd,false,true,1
+P_Log,Programmation Logique,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS175,3,MIAS,17,1,5,4.0,66.0,34.0,UE14,true,lmd,false,true,1
+PFE,Projet de Fin Etudes,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS176,3,MIAS,17,0,6,20.0,100.0,0.0,UE16,true,lmd,false,true,1
+PROB,Probabilité,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS184,2,MIAS,18,1,4,4.0,60.0,40.0,MG11,true,lmd,false,false,1
+PROGP,Architecture et prog-parallèle,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS176,3,MIAS,17,0,6,5.0,100.0,0.0,UE15,false,lmd,false,true,1
+REC-F,Reconnaissance des formes,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS176,3,MIAS,17,0,6,5.0,100.0,0.0,UE15,false,lmd,false,true,1
+RES,Réseaux,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS175,3,MIAS,17,1,5,6.0,66.0,34.0,UE13,true,lmd,false,true,1
+RET,Réseaux et Télécoms,1,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,2.5,60.0,40.0,MVS,true,lmd,false,false,1
+SBC,Sytème à Base de Connaissances,1,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,3.0,60.0,40.0,LCO,true,lmd,false,true,1
+SD,Système d`exploitation 1,5,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,2MIAS174,2,MIAS,17,2,4,5.0,50.0,50.0,UEIN4,true,lmd,false,true,1
+SED,Simulation à évenement discret,1.5,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,3.5,60.0,40.0,ROP,true,lmd,false,true,1
+SEW,Sécurité Web,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI191,1,MGI,19,1,1,2.5,60.0,40.0,BSE,false,lmd,false,false,1
+SI,Système d`Information ,4,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS173,2,MIAS,17,1,3,4.0,66.0,34.0,UEIN1,true,lmd,false,true,1
+StatD,Statistiques Descriptives ,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS172,1,MIAS,17,1,2,4.0,66.0,34.0,UEF21,true,lmd,false,true,1
+STRM,Structure Machine,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS172,1,MIAS,17,1,2,3.0,66.0,34.0,UEF22,true,lmd,false,true,1
+SYS E,Systeme d`exploitation 2,1,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,3MIAS175,3,MIAS,17,2,5,6.0,50.0,50.0,UE13,true,lmd,false,true,1
+SYS-D,Systèmes distribués,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS176,3,MIAS,17,1,6,5.0,66.0,34.0,UE15,false,lmd,false,true,1
+T-L,Théorie des Langages,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS174,2,MIAS,17,1,4,4.0,66.0,34.0,UEIN5,true,lmd,false,true,1
+TEC1,Technique d`expression,2,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS171,1,MIAS,17,0,1,3.0,100.0,0.0,UEM ,true,lmd,false,false,1
+Tecw,technique web,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS172,1,MIAS,17,0,2,2.0,100.0,0.0,UED23,true,lmd,false,false,1
+TEM,Topologie des Espases Métrique,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,2MIAS183,2,MIAS,18,1,3,5.0,60.0,40.0,MG7,true,lmd,false,true,1
+Th_Gr,Théorie des graphes,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,3MIAS175,3,MIAS,17,1,5,4.0,66.0,34.0,UE14,true,lmd,false,true,1
+TPBUR,TP Bureautique,2,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MIAS171,1,MIAS,17,0,1,3.0,100.0,0.0,UEM ,true,lmd,false,false,1
+ANGn2,Anglais niveau 2,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,0,2,2.5,100.0,0.0,ANG2,true,lmd,false,false,1
+ASSL,Analyse et sythèse des SL,1.2,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,1,2,3.0,60.0,40.0,HWR,false,lmd,false,false,1
+APC,Architecture parallele et Clus,1.2,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,1,2,3.0,60.0,40.0,HWR,false,lmd,false,false,1
+DSP,DSP,1.2,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,1,2,3.0,60.0,40.0,HWR,false,lmd,false,false,1
+MC,Micro controleurs ,1.2,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,1,2,3.0,60.0,40.0,HWR,false,lmd,false,false,1
+EW,Ergonomie web,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,1,2,2.5,60.0,40.0,TWB,true,lmd,false,false,1
+OWS,Ontologies et web sémantique,1.8,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,2,2,4.5,60.0,40.0,TWB,true,lmd,false,false,1
+WS,Web services,1.8,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,2,2,4.5,60.0,40.0,TWB,true,lmd,false,false,1
+MMTS,Modèle Mathématique du TS,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,1,2,4.0,60.0,40.0,VTI,true,lmd,false,false,1
+TAM,Traitement et Analyse des Imag,1.8,false,false,1,false,1,false,0,false,0,false,0,false,1,false,0,false,1MGI192,1,MGI,19,3,2,4.5,60.0,40.0,VTI,true,lmd,false,false,1
+VA,Vision Artificielle ,1.8,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI192,1,MGI,19,2,2,4.5,60.0,40.0,VTI,true,lmd,false,false,1
+ARPS,Admin Réseaux & Prog Sys,1.4,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,1,1,3.5,60.0,40.0,TRX,true,lmd,false,false,1
+RSF,Réseaux sans fil,1.2,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,1,1,3.0,60.0,40.0,TRX,true,lmd,false,false,1
+DSE,Simulation à évènement discret,1.4,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,1,1,3.5,60.0,40.0,REOP,true,lmd,false,false,1
+AGRO,App des Graphes à la Rech Opér,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,1,1,2.5,60.0,40.0,REOP,true,lmd,false,false,1
+OROP,Optimisation en Rech Oper,1.4,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,1,1,3.5,60.0,40.0,REOP,true,lmd,false,false,1
+WEBS,Web Services,1.4,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,1,1,3.5,60.0,40.0,ALOG,true,lmd,false,false,1
+APRC,Approches par Composants,1.2,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,1,1,3.0,60.0,40.0,ALOG,true,lmd,false,false,1
+BDA,Base de Données Avancées,1,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,1,1,2.5,60.0,40.0,ALOG,true,lmd,false,false,1
+TCO,Techniques de Communication,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,0,1,2.5,100.0,0.0,UDE,false,lmd,false,false,1
+GEE,Gestion et Economie Entreprise,1,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,1,1,2.5,100.0,0.0,UDE,false,lmd,false,false,1
+ANGP,Anglais Premier Niveau,1,false,false,0,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI201,1,MGI,20,0,1,2.5,100.0,0.0,UTE,true,lmd,false,false,1
+TAI,Traitement et Analyse Images,1.8,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI202,1,MGI,20,2,2,4.5,60.0,40.0,VTIM,true,lmd,false,false,1
+VART,Vision Artificielle,1.8,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI202,1,MGI,20,2,2,4.5,60.0,40.0,VTIM,true,lmd,false,false,1
+MMT,Modèle Math et Trait Signale,1.6,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI202,1,MGI,20,1,2,4.0,60.0,40.0,VTIM,true,lmd,false,false,1
+TFM,Télécom Fixes et  Mobiles,2.6,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI202,1,MGI,20,2,2,6.5,60.0,40.0,TCE,true,lmd,false,false,1
+TCT,Technique et Techn de Transmis,2,false,false,1,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI202,1,MGI,20,2,2,5.0,50.0,50.0,TCE,true,lmd,false,false,1
+TCIP,Technoligie IP,1.2,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI202,1,MGI,20,1,2,3.0,60.0,40.0,EDP,false,lmd,false,false,1
+MICO,Micro Controleur,1.2,false,false,0,false,1,false,0,false,0,false,0,false,0,false,0,false,1MGI202,1,MGI,20,1,2,3.0,60.0,40.0,EDP,false,lmd,false,false,1
+ASLO,Analyse et Synt des Sys Logiqu,1.2,false,false,1,false,0,false,0,false,0,false,0,false,0,false,0,false,1MGI202,1,MGI,20,1,2,3.0,60.0,40.0,EDP,false,lmd,false,false,1
+AGL2,Anglais Niveau 2,1,false,false,0,

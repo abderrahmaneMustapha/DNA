@@ -1,0 +1,6 @@
+"name","type","length","leftDigits","rightDigits"
+"Code_Cycle","STRING","4","0","0"
+"Désignation_Cycle","STRING","6","0","0"
+"Nbre_Année","INTEGER","1","1","0"
+"Désignation_CycleAr","STRING","6","0","0"
+"Descriptif","STRING","22","0","0"

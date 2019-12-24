@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"SemestreEnLettre","STRING","14","0","0"
+"SemestreEnChiffre","INTEGER","1","1","0"
+"SemestreEnArabe","STRING","14","0","0"

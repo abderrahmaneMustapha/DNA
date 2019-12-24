@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"N_Série","STRING","3","3","0"
+"Série","STRING","37","0","0"
+"Série_Ar","STRING","37","0","0"

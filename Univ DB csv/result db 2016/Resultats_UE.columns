@@ -1,0 +1,7 @@
+"name","type","length","leftDigits","rightDigits"
+"N°Ins","INTEGER","11","11","0"
+"Code_UE","STRING","5","0","0"
+"credit_obtenu","DECIMAL","4","2","1"
+"Moy_UE","DECIMAL","5","2","2"
+"Aquit","STRING","5","0","0"
+"exclu_ue","STRING","5","0","0"
