@@ -1,0 +1,5 @@
+LICENSE_VALIDATION_DONE=1
+eclipse.preferences.version=1
+lastUSedProject=LOCAL_PROJECT
+logonDialog.alwaysAskMeAtStartUp=true
+workspaceTasksDone=org.talend.core.InitConnectionsMigrationTask|org.talend.core.EmptyConnectionsMigrationTask|org.talend.designer.core.ui.preferences.migration.AddQuotesForStatLogsPreference|org.talend.designer.runprocess.migrationtask.changeClasspath|org.talend.designer.runprocess.maven.ChangeCodeProjectClasspathMigrationTask2|org.talend.migrationTool.InitWorkspaceMigrationTask|org.talend.repository.model.migration.ChangeProjectTechinicalName

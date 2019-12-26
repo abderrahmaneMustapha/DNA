@@ -1,0 +1,142 @@
+semestre,cours_id,cours_name,coef,level,study_level,study_field
+2,Agl,Anglais,1,1,MIAS,17
+1,AGR,Application Graphes à la RO,1,1,MGI,19
+1,ALG1,Algèbre 1,1,1,MIAS,17
+3,ALG3,Algèbre 3,1,2,MIAS,18
+4,ALG4,ALgèbre 4,1,2,MIAS,18
+2,Algé2,Algébre 2,1,1,MIAS,17
+3,ALGO,Algorithmique,5,2,MIAS,17
+4,Algo2,Algorithmique 2,5,2,MIAS,17
+2,Aly2,Analyse 2,1,1,MIAS,17
+3,AN,Analyse/Numérique,1,2,MIAS,17
+1,Analy,Analyse 1,2,1,MIAS,17
+3,ANG,Anglais,1,2,MIAS,17
+4,ANG2,Anglais 2,1,2,MIAS,17
+3,ANL3,Analyse 3,2,2,MIAS,18
+4,ANL4,Analyse 4,2,2,MIAS,18
+4,ANLC,Analyse Complexe,1,2,MIAS,18
+3,ANN1,Analyse Numérique 1,2,2,MIAS,18
+4,ANN2,Analyse Numérique 2,1,2,MIAS,18
+4,APMD,Applic Mat aux Autre Disciplin,1,2,MIAS,18
+1,APN,Anlgais Premier Niveau,1,1,MGI,19
+3,ARCH,Arch/Ordinateur,5,2,MIAS,17
+4,B-D,Base des Données,6,2,MIAS,17
+1,BDD,Base de données Ava et Datamin,1,1,MGI,19
+6,BDD-A,Bases de données avancées,1,3,MIAS,17
+2,CF,Calcul formel,1,1,MIAS,17
+1,Chim,Chimie ,1,1,MIAS,17
+5,Comp,Compilation,1,3,MIAS,17
+5,crypt,Cryptographie,1,3,MIAS,17
+5,DIG,Dev. d`Interface Graphique,1,3,MIAS,17
+1,ELE,E_Learning,1,1,MGI,19
+1,Elect,Electricité,1,1,MIAS,17
+4,G-L,Génie Logiciel,1,2,MIAS,17
+4,GEOM,Géométrie,1,2,MIAS,18
+2,His-s,Histoire des sciences ,1,1,MIAS,17
+3,HISM,Histoire des Mathématiques,1,2,MIAS,18
+5,I G C,Ingenirie des Connaissances,1,3,MIAS,17
+1,info,Informatique 1,2,1,MIAS,17
+2,Info2,Informatique 2,2,1,MIAS,17
+3,ITM,I-T-Management ,1,2,MIAS,17
+3,L-M,Logique Mathématique ,1,2,MIAS,17
+3,LANE,Languages évolués ,1,2,MIAS,18
+1,LIA,Logique P/ Intéligence Artific,1.25,1,MGI,19
+3,LOGM,Logique Mathématiques,1,2,MIAS,18
+1,Mecaq,Mécanique,1,1,MIAS,17
+1,MFO,Méthodes Formelles et OV ,1.25,1,MGI,19
+1,MOM,Méthodes et outils de Modélisa,1.5,1,MGI,19
+1,ORO,Optimisation en recherche Opér,1.5,1,MGI,19
+4,P-L,Programmation Linéaire,1,2,MIAS,17
+3,P-S,Probabilité/Statistique ,1,2,MIAS,17
+5,P_Log,Programmation Logique,1,3,MIAS,17
+6,PFE,Projet de Fin Etudes,1,3,MIAS,17
+4,PROB,Probabilité,1,2,MIAS,18
+6,PROGP,Architecture et prog-parallèle,1,3,MIAS,17
+6,REC-F,Reconnaissance des formes,1,3,MIAS,17
+5,RES,Réseaux,1,3,MIAS,17
+1,RET,Réseaux et Télécoms,1,1,MGI,19
+1,SBC,Sytème à Base de Connaissances,1,1,MGI,19
+4,SD,Système d`exploitation 1,5,2,MIAS,17
+1,SED,Simulation à évenement discret,1.5,1,MGI,19
+1,SEW,Sécurité Web,1,1,MGI,19
+3,SI,Système d`Information ,4,2,MIAS,17
+2,StatD,Statistiques Descriptives ,1,1,MIAS,17
+2,STRM,Structure Machine,1,1,MIAS,17
+5,SYS E,Systeme d`exploitation 2,1,3,MIAS,17
+6,SYS-D,Systèmes distribués,1,3,MIAS,17
+4,T-L,Théorie des Langages,1,2,MIAS,17
+1,TEC1,Technique d`expression,2,1,MIAS,17
+2,Tecw,technique web,1,1,MIAS,17
+3,TEM,Topologie des Espases Métrique,1,2,MIAS,18
+5,Th_Gr,Théorie des graphes,1,3,MIAS,17
+1,TPBUR,TP Bureautique,2,1,MIAS,17
+2,ANGn2,Anglais niveau 2,1,1,MGI,19
+2,ASSL,Analyse et sythèse des SL,1.2,1,MGI,19
+2,APC,Architecture parallele et Clus,1.2,1,MGI,19
+2,MC,Micro controleurs ,1.2,1,MGI,19
+2,EW,Ergonomie web,1,1,MGI,19
+2,OWS,Ontologies et web sémantique,1.8,1,MGI,19
+2,WS,Web services,1.8,1,MGI,19
+2,MMTS,Modèle Mathématique du TS,1,1,MGI,19
+2,TAM,Traitement et Analyse des Imag,1.8,1,MGI,19
+2,VA,Vision Artificielle ,1.8,1,MGI,19
+1,ARPS,Admin Réseaux & Prog Sys,1.2,1,MGI,20
+1,RSF,Réseaux sans fil,1.2,1,MGI,20
+1,DSE,Simulation à évènement discret,1.4,1,MGI,20
+1,AGRO,App des Graphes à la Rech Opér,1,1,MGI,20
+3,RBIB,Recherche Bibliographique,2,2,MGI,20
+4,PFER,Projet de fin d etudes ,8,2,MGI,20
+4,PFEM,Projet de Fin d Etudes,1,2,MGI,22
+6,JVA,Java,1,3,MIAS,17
+1,GL,Génie Logiciel,1,1,MGI,23
+1,CA,Compléxité Algorithmique,1,1,MGI,23
+1,COSI,Conception Objet d un S.I,1,1,MGI,23
+1,SMA,Systèmes Multi Agents,1,1,MGI,23
+1,OIN,Outils de l Internet,1,1,MGI,23
+1,LOIA,Logique pour L I.A,1,1,MGI,23
+1,SEVD,Simmulation a event Discret,1,1,MGI,23
+1,ANG1,Anglais 1,1,1,MGI,23
+2,SCL,Spécification Concep Logiciel,1,1,MGI,23
+2,ARCDL,Architecture et Dév Logiciel,1,1,MGI,23
+2,IHIA,IHM .IA App aux Problèmes Indu,3,1,MGI,23
+2,PRGW,Programmation Web,3,1,MGI,23
+3,DAPMA,Dév App Mob sous Androide,4,2,MGI,23
+1,OROP,Optimisation en Rech Oper,1.4,1,MGI,20
+1,WEBS,Web Services,1.4,1,MGI,20
+1,APRC,Approches par Composants,1.2,1,MGI,20
+1,BDA,Base de Données Avancées,1,1,MGI,20
+1,ANGP,Anglais Premier Niveau,1,1,MGI,20
+2,TINT,Technologie de l Internet,1.8,1,MGI,20
+2,TRXO,Technologie des RX opérateurs,1.8,1,MGI,20
+2,MMT,Modèle Math et Trait Signale,1.6,1,MGI,20
+2,TFM,Télécom Fixes et  Mobiles,2.6,1,MGI,20
+2,TCT,Technique et Techn de Transmis,2,1,MGI,20
+2,TCIP,Technoligie IP,1.2,1,MGI,20
+2,MICO,Micro Controleur,1.2,1,MGI,20
+2,ASLO,Analyse et Synt des Sys Logiqu,1.2,1,MGI,20
+2,AGL2,Anglais Niveau 2,1,1,MGI,20
+3,MADN,Modèle d Aide à la Décision,1.20,2,MGI,21
+3,MOORG,Modèles des Organisations,1,2,MGI,21
+3,SMP,Simulation Participative,1.2,2,MGI,21
+3,GPI,Gestion des Projets Informatiq,1.2,2,MGI,21
+3,RECB,Recherche Bibliographique,2,2,MGI,21
+4,PFEM1,Projet de fin d Etudes,1,2,MGI,21
+3,GPI1,Gestion des Projet Informatiq,1.2,2,MGI,22
+3,RECHB,Recherche Bibliographique,2,2,MGI,22
+3,STR,Système Temps Réel,1.2,2,MGI,22
+3,TAVTS,Théorie Avan Trait de Signale,1.2,2,MGI,22
+3,PRCL,Parallélisme et Clustring,1,2,MGI,22
+3,SRW,Sécurité réseaux et Web,1.25,2,MGI,20
+3,QSER,Qualité de Service,1.25,2,MGI,20
+3,PARCL,Parallelisme et Clustring,1,2,MGI,20
+3,GSPI,Gestion des projets informatiq,1.25,2,MGI,20
+2,I.A,Intéligence Artificielle,4,1,MGI,23
+2,BDDA,Bases de Données Avancées,1,1,MGI,23
+2,XMLW,XML et Web 2.0,1,1,MGI,23
+2,ANG2.,Anglais 2,1,1,MGI,23
+3,MTLOG,Maintenance Logicielle,3,2,MGI,23
+3,GESTP,Gestion de Projet Informatique,4,2,MGI,23
+3,GESQ,Gestion de Qualité,3,2,MGI,23
+3,ANG3,Anglais 3,1,2,MGI,23
+1,RLE,Réseaux Locaux et équipements,1.2,1,MGI,20
+4,P.FE,Projet de Fin d Etudes,1,2,MGI,23
