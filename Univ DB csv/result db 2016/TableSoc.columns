@@ -1,5 +1,0 @@
-"name","type","length","leftDigits","rightDigits"
-"Commune","INTEGER","11","11","0"
-"Tel","STRING","4","0","0"
-"Fax","STRING","0","0","0"
-"code_postal","STRING","19","0","0"

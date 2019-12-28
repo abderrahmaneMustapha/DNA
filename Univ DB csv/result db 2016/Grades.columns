@@ -1,6 +1,0 @@
-"name","type","length","leftDigits","rightDigits"
-"Réf_Grade","INTEGER","2","2","0"
-"Grade","STRING","21","0","0"
-"MtHoraire","INTEGER","3","3","0"
-"MtMonsuel","INTEGER","5","5","0"
-"Grade_Ar","STRING","24","0","0"
