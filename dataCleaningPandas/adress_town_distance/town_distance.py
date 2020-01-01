@@ -1,6 +1,7 @@
 import pandas as pd
 from geopy.distance import great_circle
 
+#filter and drop duplcates rows
 data  =  pd.read_csv("AllStudent.csv")
 data  =  data.filter(['N°Ins','Adresse']).drop_duplicates()
 data.fillna("other", inplace=True)
@@ -8,6 +9,7 @@ pd.DataFrame(data).to_csv('clean_adress.csv',index=False)
 
 towns = pd.read_csv("town.csv")
 
+## calculate distance between tiaret univ and each other town
 from math import radians
 #tiaret,35.3451336,1.2671041,
 for i in range(len(towns)):
@@ -16,6 +18,7 @@ for i in range(len(towns)):
     towns['distance'][i] = great_circle(tiaret,town).km
 
 pd.DataFrame(towns).to_csv('town_distance.csv',index=False,encoding='utf-8')
+
 
 #set towns to each adress
 adress = pd.read_csv("clean_adress.csv",encoding='utf-8')
