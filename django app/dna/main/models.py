@@ -25,8 +25,7 @@ class Algoresult(models.Model):
         managed = False
         db_table = 'algoresult'
     def __str__(self):
-        return str(self.algo_result_id)
-
+        return self.student_id
 
 
 class AuthGroup(models.Model):
@@ -108,8 +107,8 @@ class Bac(models.Model):
         managed = False
         db_table = 'bac'
     def __str__(self):
-        return str(self.bac_id)
-    
+        return self.bac_id
+
 
 
 class BacPath(models.Model):
@@ -120,7 +119,7 @@ class BacPath(models.Model):
         managed = False
         db_table = 'bac_path'
     def __str__(self):
-        return str(self.path_name)
+        return self.bac_id
 
 
 class Bactodb(models.Model):
@@ -160,8 +159,7 @@ class Courseprofile(models.Model):
         managed = False
         db_table = 'courseprofile'
     def __str__(self):
-        return str(self.course)
-
+        return self.course_profile_id
 
 
 class Courses(models.Model):
@@ -177,7 +175,8 @@ class Courses(models.Model):
         managed = False
         db_table = 'courses'
     def __str__(self):
-        return str(self.cours_id)
+        return self.cours_id
+    
 
 
 class DjangoAdminLog(models.Model):
@@ -222,7 +221,6 @@ class DjangoSession(models.Model):
     class Meta:
         managed = False
         db_table = 'django_session'
-  
 
 
 class MainMember(models.Model):
@@ -248,13 +246,16 @@ class Performance(models.Model):
     class Meta:
         managed = False
         db_table = 'performance'
+    def __str__(self):
+        return self. performance_id
+     
 
 
 class Results(models.Model):
     result_id = models.BigAutoField(primary_key=True)
     student = models.ForeignKey('Students', models.DO_NOTHING, blank=True, null=True)
     info = models.ForeignKey('Studentinfo', models.DO_NOTHING, blank=True, null=True)
-    bac_id = models.CharField(max_length=50, blank=True, null=True)
+    bac = models.ForeignKey(Bac, models.DO_NOTHING, blank=True, null=True)
     date = models.ForeignKey('Scholaryear', models.DO_NOTHING, blank=True, null=True)
     algo_result = models.ForeignKey(Algoresult, models.DO_NOTHING, blank=True, null=True)
     adress = models.ForeignKey('Studentadress', models.DO_NOTHING, blank=True, null=True)
@@ -264,7 +265,8 @@ class Results(models.Model):
     class Meta:
         managed = False
         db_table = 'results'
-
+    def __str__(self):
+        return self.result_id
 
 class Scholaryear(models.Model):
     year_id = models.IntegerField(primary_key=True)
@@ -273,6 +275,8 @@ class Scholaryear(models.Model):
     class Meta:
         managed = False
         db_table = 'scholaryear'
+    def __str__(self):
+        return self.scholar_year
 
 
 class Studentadress(models.Model):
@@ -283,6 +287,8 @@ class Studentadress(models.Model):
     class Meta:
         managed = False
         db_table = 'studentadress'
+    def __str__(self):
+        return self.adress_id
 
 
 class Studentinfo(models.Model):
@@ -316,6 +322,8 @@ class Studentinfo(models.Model):
     class Meta:
         managed = False
         db_table = 'studentinfo'
+    def __str__(self):
+        return self.info_id
 
 
 class Students(models.Model):
@@ -327,6 +335,8 @@ class Students(models.Model):
     class Meta:
         managed = False
         db_table = 'students'
+    def __str__(self):
+        return self.student_id
 
 
 class Towns(models.Model):
@@ -340,6 +350,8 @@ class Towns(models.Model):
     class Meta:
         managed = False
         db_table = 'towns'
+    def __str__(self):
+        return self.town
 
 
 class Univfield(models.Model):
@@ -349,3 +361,5 @@ class Univfield(models.Model):
     class Meta:
         managed = False
         db_table = 'univfield'
+    def __str__(self):
+        return self.name
