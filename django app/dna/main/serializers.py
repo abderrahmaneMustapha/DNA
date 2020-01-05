@@ -26,7 +26,7 @@ class BacSerializer(serializers.ModelSerializer):
 
 class BacPathSerializer(serializers.ModelSerializer):
     class Meta:
-        model =  Bac
+        model =  BacPath
         fields = '__all__'
         #read_only_fields  = fields
 
