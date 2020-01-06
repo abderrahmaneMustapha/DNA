@@ -129,7 +129,7 @@ class Scholaryear(models.Model):
         
         db_table = 'scholaryear'
     def __str__(self):
-        return self.year_id
+        return str(self.year_id)
 
 
 class Univfield(models.Model):
@@ -290,7 +290,7 @@ class Performance(models.Model):
         managed = False
         db_table = 'performance'
     def __str__(self):
-        return str(self.performance_id) or ''
+        return str(self.performance_id) 
      
 
 class Studentinfo(models.Model):
