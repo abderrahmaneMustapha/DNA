@@ -1,0 +1,22 @@
+.Dashboard{
+  background-color:#2B2450;
+  width: 100vw;
+  height: 200vh;
+}
+.Dashboard *{
+    color: #E7E7EB;
+}
+.Dashboard article{
+    display: flex;
+    flex-direction: column;
+}
+
+#general-info{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap:3em;
+}
+#general-info div {
+    background-color: #2B2450;
+}
+

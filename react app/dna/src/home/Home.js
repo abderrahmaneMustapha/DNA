@@ -7,9 +7,6 @@ import Card from 'react-bootstrap/Card';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Holder from 'react-holder'
-
-import NavBar from '../navbar/NavBar';
 import './home.css';
 
 class Home extends React.Component {
@@ -26,8 +23,7 @@ class Home extends React.Component {
   render(){
     return (
       
-      <div className="Home">    
-        <NavBar />
+      <div className="Home">       
         <main className="Home-main ">  
 
           <header className="Home-header">
@@ -38,12 +34,12 @@ class Home extends React.Component {
 
           <section className="Form-container pt-5">   
           <Form  inline>
-            <FormControl  className="form-control" type="text" placeholder="Search..." className="" />
+            <FormControl  className="form-control" type="text" placeholder="Search..." />
           </Form>
           </section>
 
           <section className="Info text-center">
-          <header> WHAT YOU CAN DO WITH OUR SUMMONER SEARCH</header>
+          <header> WHAT YOU CAN DO WITH OUR APP</header>
           <section className="Info-container">
                 <Card className="text-center" style={{ width: '18rem' }}>                  
                   <Card.Body>

@@ -1,9 +1,26 @@
 
 .NavBar{
+    width:101.5%;
+}
+nav, nav ul li .list-group-item{
     background-color: #160D33;
+    border-color: #160D33;
+}
+nav .list-group {
+    text-decoration: none;
+    list-style-type:none;
     display: flex;
-    position: fixed;
-    height:100vh;
-    width:5vw;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0em 14em 0em 14em;
+}
+nav ul li a{
+    color:#E7E7EB;
+    text-decoration: none;
 }
 
+nav ul li a:hover{
+    color:rgb(242, 242, 248);
+    text-decoration: none;
+       
+}
