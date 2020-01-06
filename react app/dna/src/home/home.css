@@ -1,0 +1,52 @@
+.Home{
+background-color:#2B2450;
+width:100vw;
+height:200vh;
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.Home-main{
+    background-color:#2B2450;
+    height:200vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+   
+}
+.Home-main .Home-header{
+    padding-top:10em;
+}
+.Home-main  .Form-container {
+    margin-top:3em;
+}
+.Home-main header h1, .Home-main .Info header{
+    color: #E7E7EB;
+
+}
+.Home-main .form-control {
+    width: 50em;
+    height:3em;    
+}
+
+.Home-main .Info-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap:2em;
+   
+}
+
+.Home-main .Info{
+    margin: 2em ;
+    padding-top:6em;
+}
+
+.Home-main .Info header{
+    margin:3em;
+}
+
