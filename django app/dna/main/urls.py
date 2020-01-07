@@ -11,6 +11,7 @@ router = routers.DefaultRouter()
 router.register('bac_path', views.BacPathView)
 router.register('course_profile', views.CourseprofileView)
 router.register('courses', views.CoursesView)
+router.register('best_courses',views.BestCoursesView)
 #scholar years
 
 router.register('performance', views.PerformanceView)

@@ -80,3 +80,9 @@ class  UnivfieldSerializer(serializers.ModelSerializer):
         model =  Univfield
         fields = '__all__'
         #read_only_fields  = fields
+
+class BestCoursesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =  BestCourses
+        fields = '__all__'
+        #read_only_fields  = fields

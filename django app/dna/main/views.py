@@ -59,3 +59,6 @@ class TownsView(viewsets.ModelViewSet):
 class UnivfieldView(viewsets.ModelViewSet):
     queryset =  Univfield.objects.all()
     serializer_class = UnivfieldSerializer
+class BestCoursesView(viewsets.ModelViewSet):
+    queryset = BestCourses.objects.all()
+    serializer_class = BestCoursesSerializer

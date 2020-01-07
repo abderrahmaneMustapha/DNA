@@ -364,3 +364,14 @@ class Towns(models.Model):
     def __str__(self):
         return str(self.town)
 
+
+class BestCourses(models.Model):
+    cours_id = models.CharField(primary_key=True,max_length=20)
+    admis_number = models.IntegerField(blank=True, null=True)
+    student_number = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'best_courses'
+    def __str__(self):
+        return str(self.cours_id)

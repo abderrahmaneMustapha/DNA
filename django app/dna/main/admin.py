@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import (Courses,Courseprofile,Bactodb,Bac,BacPath,Algoresult,Performance,
-Results,Scholaryear,Students,Studentadress,Studentinfo,Towns,Univfield)
+from .models import *
 
 class CoursesAdmin(admin.ModelAdmin):
     list_display = ('cours_id','level','semestre')
@@ -68,4 +67,5 @@ admin.site.register( Studentadress, StudentadressAdmin)
 admin.site.register(Studentinfo, StudentinfoAdmin)
 admin.site.register(Students,  StudentsAdmin)
 admin.site.register(Towns, TownsAdmin)
+admin.site.register(BestCourses)
 
