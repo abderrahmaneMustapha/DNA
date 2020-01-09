@@ -196,7 +196,7 @@ class BacPath(models.Model):
         managed = False
         db_table = 'bac_path'
     def __str__(self):
-        return  str(self.path_id)
+        return  str(self.path_name)
 
 class Bac(models.Model):
     tempd_id = models.IntegerField(primary_key=True)

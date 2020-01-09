@@ -16,6 +16,7 @@
     grid-template-columns: auto auto;
     grid-row-gap:3em;
 }
+
 #general-info div {
     background-color: #2B2450;
 }
