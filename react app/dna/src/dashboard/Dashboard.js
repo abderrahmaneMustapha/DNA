@@ -59,6 +59,14 @@ class Dashboard extends React.Component {
       year_path_worst: [],
       year_winrate_worst: [],
 
+      bac_avgs: [],
+      bac_paths: [],
+      bac_ids: [],
+      bac_years: [],
+      bac_feedbacks: [],
+      bac_id: [],
+
+
     }
     this.handleClickYear = this.handleClickYear.bind(this);
   
@@ -275,6 +283,43 @@ calculatebestcourseyear = (result)=>{
 
 }
 
+getbestbacavg = (result)=>{
+  var bac_avgs = []
+  var bac_paths = []
+  var bac_ids = []
+  var bac_years = []
+  var bac_feedbacks = []
+  var bac_id = []
+
+  result.sort((a,b)=> {
+    return  parseInt(b.bac_avg) - parseInt(a.bac_avg)
+  })
+
+  for(var i=0; i < result.length;i++){
+    console.log(result[i]['bac_avg'])
+    
+    bac_avgs.push(result[i]['bac_avg'])
+  
+    
+    bac_paths.push(this.findStudentPath(result[i]['highshcool_path']))
+    bac_ids.push(result[i]['bac_id'])
+    bac_years.push(result[i]['bac_year'])
+  }
+
+  this.setState(
+    {
+      bac_avgs: [],
+      bac_paths: [],
+      bac_ids: [],
+      bac_years: [],
+      bac_feedbacks: [],
+      bac_id: [],
+
+    }
+  )
+ 
+}
+
 
 connectToBestCourses = ()=>{
   fetch('http://127.0.0.1:8000/best_courses/').
@@ -284,6 +329,8 @@ then(
     this.calculatebestcourses(result)
    
   }
+
+  
 )
 }
 
@@ -320,12 +367,23 @@ connectToScholarYear = ()=>{
   )
 }
 
+connectToBac = ()=>{
+  fetch('http://127.0.0.1:8000/bac/').
+  then(res => res.json()).
+  then(
+    result =>{
+      this.getbestbacavg(result)    
+    }
+  )
+}
+
 
 componentDidMount() {
   this.connectToBestCourses()
   this.connectToBac()
   this.connectToCourseProfile()
   this.connectToScholarYear()
+  this.connectToBac()
 }
 handleClickYear = (e)=>{
   let year = e.target.text
@@ -556,9 +614,16 @@ return yearsList
             </article>
 
             <aside className="col-md-4">
+            <header className="text-center">Best Bac Avg</header>
 
               <div>
+              <Card>
+                    <Card.Body>
+                      <ul>
 
+                      </ul>      
+                    </Card.Body>
+                  </Card> 
               </div>
             </aside>
 
