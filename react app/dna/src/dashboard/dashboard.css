@@ -1,7 +1,7 @@
 .Dashboard{
   background-color:#2B2450;
   width: 100vw;
-  height: 200vh;
+  height: 300vh;
 }
 .Dashboard *{
     color: #E7E7EB;
@@ -14,10 +14,15 @@
 #general-info{
     display: grid;
     grid-template-columns: auto auto;
-    grid-row-gap:3em;
+    grid-gap:1em;
 }
 
-#general-info div {
-    background-color: #2B2450;
+#general-info div , .card{
+    background-color: #261F49;
 }
 
+#years_analysis_card .card-body{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap:1em;
+}

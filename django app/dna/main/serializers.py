@@ -35,6 +35,7 @@ class CourseprofileSerializer(serializers.ModelSerializer):
         model =  Courseprofile
         fields = '__all__'
         #read_only_fields  = fields
+        filterset_fields = ["date"]
 
 class PerformanceSerializer(serializers.ModelSerializer):
     class Meta:

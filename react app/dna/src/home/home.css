@@ -1,5 +1,4 @@
 .Home{
-background-color:#2B2450;
 width: 100vw;
 height: 200vh;
 margin: 0;
@@ -7,7 +6,7 @@ margin: 0;
 }
 
 .Home-main{
-    background-color:#2B2450;
+    background-color:#261F49;
     height:200vh;
     display: flex;
     flex-direction: column;
