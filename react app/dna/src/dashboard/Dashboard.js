@@ -61,7 +61,7 @@ class Dashboard extends React.Component {
 
       bac_avgs: [],
       bac_paths: [],
-      bac_ids: [],
+      bac_student: [],
       bac_years: [],
       bac_feedbacks: [],
       bac_id: [],
@@ -220,17 +220,14 @@ findStudentPath = (id)=>{
 calculatebestcourseyear = (result)=>{
  
   let temp = []
-  var year = this.state.current_year
-  for(var i=0; i< result.length;i++){ 
-    if(year == this.state.years[result[i]['date']-1]){
-      
+
+  for(var i=0; i< result.length;i++){       
       temp.push({
         "course" : result[i].course,
         "year" : this.state.years[result[i]['date']-1],
         "bac_path": this.findStudentPath(result[i].path),
         "winrate": ( isNaN((parseInt(result[i].admis_number) / parseInt(result[i].student_number)).toFixed(4) * 100) ) ? 0 :   (parseInt(result[i].admis_number) / parseInt(result[i].student_number)).toFixed(4) * 100,       
-       })
-    }
+       })  
      
   }
   temp.sort((a,b)=> {
@@ -258,9 +255,9 @@ calculatebestcourseyear = (result)=>{
      
   })
 
-  temp.sort((a,b)=> {
-    return  parseInt(a.winrate) - parseInt(b.winrate)
-  })
+  temp.sort((a,b)=>
+   parseInt(a.winrate) - parseInt(b.winrate)
+  )
    temp_courses = []
    temp_years = []
    temp_bac_paths = []
@@ -286,7 +283,7 @@ calculatebestcourseyear = (result)=>{
 getbestbacavg = (result)=>{
   var bac_avgs = []
   var bac_paths = []
-  var bac_ids = []
+  var bac_student = []
   var bac_years = []
   var bac_feedbacks = []
   var bac_id = []
@@ -296,24 +293,24 @@ getbestbacavg = (result)=>{
   })
 
   for(var i=0; i < result.length;i++){
-    console.log(result[i]['bac_avg'])
     
-    bac_avgs.push(result[i]['bac_avg'])
-  
-    
+    bac_avgs.push(result[i]['bac_avg'])      
     bac_paths.push(this.findStudentPath(result[i]['highshcool_path']))
-    bac_ids.push(result[i]['bac_id'])
+    bac_student.push(result[i]['student_id'])
     bac_years.push(result[i]['bac_year'])
+    bac_feedbacks.push(result[i]['bac_feedback'])
+    bac_id.push(result[i]['bac_id'])
+  
   }
 
   this.setState(
     {
-      bac_avgs: [],
-      bac_paths: [],
-      bac_ids: [],
-      bac_years: [],
-      bac_feedbacks: [],
-      bac_id: [],
+      bac_avgs: [...bac_avgs],
+      bac_paths: [...bac_paths],
+      bac_student: [...bac_student],
+      bac_years: [...bac_years],
+      bac_feedbacks: [...bac_feedbacks],
+      bac_id: [...bac_id] 
 
     }
   )
@@ -339,6 +336,7 @@ connectToBac = ()=>{
   then(res => res.json()).
   then(
     result =>{
+      this.getbestbacavg(result)  
       this.calculatepopularfield(result)
      
     }
@@ -350,8 +348,22 @@ connectToCourseProfile = () =>{
   then(res => res.json()).
   then(
     result =>{
+  
       this.calculatebestbacfield(result)
       this.calculatebestgender(result) 
+    
+    }
+  )
+}
+
+connectToCourseProfileBydate = () =>{
+  var date = (this.state.years.indexOf(this.state.current_year)+1)==0 ? 1: (this.state.years.indexOf(this.state.current_year)+1)
+
+  fetch('http://127.0.0.1:8000/course_profile/?date='+date).
+  then(res => res.json()).
+  then(
+    result =>{
+  
       this.calculatebestcourseyear(result)    
     }
   )
@@ -367,23 +379,16 @@ connectToScholarYear = ()=>{
   )
 }
 
-connectToBac = ()=>{
-  fetch('http://127.0.0.1:8000/bac/').
-  then(res => res.json()).
-  then(
-    result =>{
-      this.getbestbacavg(result)    
-    }
-  )
-}
+
 
 
 componentDidMount() {
+  this.connectToScholarYear()
   this.connectToBestCourses()
   this.connectToBac()
-  this.connectToCourseProfile()
-  this.connectToScholarYear()
-  this.connectToBac()
+  this.connectToCourseProfile()  
+  this.connectToCourseProfileBydate()
+ 
 }
 handleClickYear = (e)=>{
   let year = e.target.text
@@ -392,7 +397,7 @@ handleClickYear = (e)=>{
     current_year : parseInt(year),
   })
 
-  this.connectToCourseProfile()
+  this.connectToCourseProfileBydate()
 }
 
 
@@ -400,7 +405,7 @@ handleClickYear = (e)=>{
 displayYears = ()=>{
   var id =  "years_list"
   const yearsList = this.state.years.map((year) =>
-  <li className="nav-item active">
+  <li className="list-group-item">
     <a className="nav-link text-white" href="#year-analysis"  onClick={this.handleClickYear}>
     {year}
     </a>
@@ -409,15 +414,51 @@ displayYears = ()=>{
 return yearsList
 }
 
+diplayBestBacresults = ()=>{
+  var bac_list  = []
+  let bac_avgs = [...this.state.bac_avgs]
+  var bac_paths = [...this.state.bac_paths]
+  var bac_student = [...this.state.bac_student]
+  var bac_years = [...this.state.bac_years]
+  var bac_feedbacks = [...this.state.bac_feedbacks]
+  var bac_id = [...this.state.bac_id]
+  
+  for(var i=0;i<10;i++){
+    bac_list.push(
+    <li id="bac_list_group_item" className="list-group-item">
+    <div id="#bac_ids">
+     <p> student : {bac_student[i]}</p>
+      <p> id: {bac_id[i]}</p>
+    </div>
+
+    <div id="#bac_infos">
+      <p>Avg: {bac_avgs[i]}</p>
+      <p>{bac_feedbacks[i]}</p>
+    </div>
+
+    <div id="bac_year">      
+      <p>Year: {bac_years[i]}</p> 
+      <p>Path: {bac_paths[i]}</p>
+    </div> 
+    </li>
+    )
+  }
+
+  return bac_list
+ 
+}
+
 
   render(){
     const cardWidth = "22rem"
-    const barColor = "#18BD9B"
+    const greenBarColor = "#18BD9B"
     const redBarColor = "#E54787"
     let yearsList = this.displayYears()
+    let bacList = this.diplayBestBacresults()
 
     return (
       <div className="Dashboard">
+        <h1 className="text-center">Dashboard</h1>
         <div className="container">
           <div className="row">
 
@@ -426,7 +467,7 @@ return yearsList
                 /*generale info section start*/
               }
               <section>
-                <header className="text-center">General Info</header>
+                <header className="text-center"><h3>General Info</h3></header>
                   <div id="general-info">
                   <Card id="best-courses"  style={{ width: cardWidth}}>
                     <Card.Body>
@@ -437,7 +478,7 @@ return yearsList
                                 datasets: [
                                   { 
                                     label: "Top 5 Admis Percentage since 2010 ",
-                                    backgroundColor: barColor,
+                                    backgroundColor: greenBarColor,
                                     data : this.state.best_courses_winrate.slice(0,5)
                                      }
                                 ]
@@ -458,7 +499,7 @@ return yearsList
                               datasets: [
                                 { 
                                   label: "Most popular bac field since 2010",
-                                  backgroundColor: barColor,
+                                  backgroundColor: greenBarColor,
                                   data : this.state.popular_fields_number
                                   }
                               ]
@@ -477,7 +518,7 @@ return yearsList
                               datasets: [
                                 { 
                                   label: "Top  bac field since 2010",
-                                  backgroundColor: barColor,
+                                  backgroundColor: greenBarColor,
                                   data : this.state.best_bacfield_winrate
                                   }
                               ]
@@ -496,7 +537,7 @@ return yearsList
                               datasets: [
                                 { 
                                   label: "Male Vs Female Admis since  2010",
-                                  backgroundColor: barColor,
+                                  backgroundColor: greenBarColor,
                                   data : this.state.best_gender_winrate
                                   }
                               ]
@@ -518,7 +559,7 @@ return yearsList
                 /* year analysis section start */
               }
               <section>
-                <header className="text-center">Year Analysis</header>
+                <header className="text-center"><h3>Years Analysis</h3></header>
                 <div id="year-analysis">
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="collapse navbar-collapse">                   
@@ -537,7 +578,7 @@ return yearsList
                               datasets: [
                                 { 
                                   label: "best modules for "+this.state.current_year,
-                                  backgroundColor: barColor,
+                                  backgroundColor: greenBarColor,
                                   data : this.state.year_winrate.slice(0,5)
                                   }
                               ]
@@ -573,7 +614,7 @@ return yearsList
                               datasets: [
                                 { 
                                   label: "Male Vs Female Admis since  2010",
-                                  backgroundColor: barColor,
+                                  backgroundColor: greenBarColor,
                                   data : this.state.best_gender_winrate
                                   }
                               ]
@@ -592,7 +633,7 @@ return yearsList
                               datasets: [
                                 { 
                                   label: "Male Vs Female Admis since  2010",
-                                  backgroundColor: barColor,
+                                  backgroundColor: greenBarColor,
                                   data : this.state.best_gender_winrate
                                   }
                               ]
@@ -614,13 +655,13 @@ return yearsList
             </article>
 
             <aside className="col-md-4">
-            <header className="text-center">Best Bac Avg</header>
+            <header className="text-center"><h3>Best  10 Bac Avg since 2010</h3></header>
 
               <div>
-              <Card>
+              <Card  style={{ width: "25rem" }}>
                     <Card.Body>
-                      <ul>
-
+                      <ul id="bac_list" className="list-group">
+                      {bacList}
                       </ul>      
                     </Card.Body>
                   </Card> 

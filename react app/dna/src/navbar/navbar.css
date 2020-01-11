@@ -1,6 +1,6 @@
 
 .NavBar{
-    width:101.5%;
+    width:100vw;
 }
 nav, nav ul li .list-group-item{
     background-color: #160D33;

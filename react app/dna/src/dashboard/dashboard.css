@@ -17,8 +17,17 @@
     grid-gap:1em;
 }
 
-#general-info div , .card{
+#general-info div , .card, .card .list-group .list-group-item{
     background-color: #261F49;
+}
+#years_list .list-group-item{
+    background-color: #160D33;
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+
+.card, #years_list .list-group-item{
+    border-style:none;
 }
 
 #years_analysis_card .card-body{
@@ -26,3 +35,14 @@
     grid-template-columns: auto auto;
     grid-gap:1em;
 }
+#bac_list li:hover, .list-group-item:hover, #years_list .list-group-item:hover{
+    background-color: #2B2450;
+}
+
+#bac_list_group_item{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    font-size: small;
+}
+
