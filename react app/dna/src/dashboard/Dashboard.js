@@ -2,7 +2,7 @@ import React from 'react';
 import './dashboard.css';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { HorizontalBar,defaults,Bar,Pie } from 'react-chartjs-2';
+import { HorizontalBar,defaults,Bar,HeatMap } from 'react-chartjs-2';
 
 defaults.global.defaultFontColor = '#E7E7EB';
 defaults.scale.ticks.beginAtZero = true; 
@@ -66,6 +66,9 @@ class Dashboard extends React.Component {
       bac_feedbacks: [],
       bac_id: [],
 
+      'admis_years' : [],
+      'ajrn_years' : []
+
 
     }
     this.handleClickYear = this.handleClickYear.bind(this);
@@ -73,6 +76,10 @@ class Dashboard extends React.Component {
   }
 
 
+
+/*
+  filter and calculate Api results
+*/
  calculatebestcourses = (result)=>{   
   
     var temp = []
@@ -116,7 +123,7 @@ calculatepopularfield = (result)=>{
       
     }
     temp.sort((a,b)=> {
-      return b.percentage - a.percentage
+      return parseFloat(b.percentage) - parseFloat(a.percentage)
     })
     let field_temp = []
     let percentage_temp = []
@@ -152,7 +159,7 @@ calculatebestbacfield = (result)=>{
   }
 
   temp.sort((a,b)=> {
-    return b.winrate - a.winrate
+    return parseFloat(b.winrate) -parseFloat(a.winrate)
   })
   let field_temp = []
   let winrate_temp = []
@@ -239,10 +246,13 @@ calculatebestcourseyear = (result)=>{
   var temp_winrates= []
 
   for(var i=0; i< temp.length;i++){  
-    temp_courses.push(temp[i].course)
-    temp_years.push(temp[i].year)
-    temp_bac_paths.push(temp[i].bac_path)
-    temp_winrates.push(temp[i].winrate)
+    if( temp_courses.indexOf(temp[i].cours) <0){
+      temp_courses.push(temp[i].course)
+      temp_years.push(temp[i].year)
+      temp_bac_paths.push(temp[i].bac_path)
+      temp_winrates.push(temp[i].winrate)
+    }
+    
   }
 
 
@@ -256,20 +266,23 @@ calculatebestcourseyear = (result)=>{
   })
 
   temp.sort((a,b)=>
-   parseInt(a.winrate) - parseInt(b.winrate)
+   parseFloat(a.winrate) - parseFloat(b.winrate)
   )
    temp_courses = []
    temp_years = []
    temp_bac_paths = []
    temp_winrates= []
   for(var i=0; i< temp.length;i++){  
+    if( temp_courses.indexOf(temp[i].cours) <0){
     temp_courses.push(temp[i].course)
     temp_years.push(temp[i].year)
     temp_bac_paths.push(temp[i].bac_path)
     temp_winrates.push(temp[i].winrate)
+    }
   }
 
-  
+  console.log(temp_courses.slice(0,5))
+  console.log(temp_winrates.slice(0,5))
   this.setState({
     year_cours_worst: [...temp_courses],
     year_years_worst: [...temp_years],
@@ -289,7 +302,7 @@ getbestbacavg = (result)=>{
   var bac_id = []
 
   result.sort((a,b)=> {
-    return  parseInt(b.bac_avg) - parseInt(a.bac_avg)
+    return  parseFloat(b.bac_avg) - parseFloat(a.bac_avg)
   })
 
   for(var i=0; i < result.length;i++){
@@ -317,7 +330,43 @@ getbestbacavg = (result)=>{
  
 }
 
+getadmisperyear = (result)=>{
+  var years = this.state.years
+  var temp = []
+  var temp_ajrn = []
+  for(var i=0; i < years.length;i++){
+    var count_total = 0
+    var count_ajr = 0
+    for(var j=0; j < result.length;j++){
+    if(result[j].scholar_year == years[i]){
+      count_total++
+      if(result[j].statu =='Ajourné'){
+        count_ajr++
+      }
+    }   
+    }  
+    temp.push(
+      ((count_total-count_ajr)/count_total).toFixed(4) *100
+    )
+    temp_ajrn.push(
+      (count_ajr/count_total).toFixed(4) *100
+    )
+  }
 
+  this.setState({
+    'admis_years' : [...temp],
+    'ajrn_years' : [...temp_ajrn]
+  })
+} 
+
+/*
+  end of  filter and calculate Api results
+*/
+
+
+/*
+  Connections to DNA API
+*/
 connectToBestCourses = ()=>{
   fetch('http://127.0.0.1:8000/best_courses/').
 then(res => res.json()).
@@ -379,7 +428,20 @@ connectToScholarYear = ()=>{
   )
 }
 
+connectToStudentInfo = ()=>{
+  fetch('http://127.0.0.1:8000/student_info/').
+  then(res => res.json()).
+  then(
+    result =>{
+      this.getadmisperyear(result)    
+    }
+  )
+}
 
+
+/*
+  END OfConnections to DNA API
+*/
 
 
 componentDidMount() {
@@ -388,8 +450,12 @@ componentDidMount() {
   this.connectToBac()
   this.connectToCourseProfile()  
   this.connectToCourseProfileBydate()
- 
+  this.connectToStudentInfo () 
 }
+
+/*
+  handle events
+*/
 handleClickYear = (e)=>{
   let year = e.target.text
   
@@ -403,7 +469,7 @@ handleClickYear = (e)=>{
 
 
 displayYears = ()=>{
-  var id =  "years_list"
+ 
   const yearsList = this.state.years.map((year) =>
   <li className="list-group-item">
     <a className="nav-link text-white" href="#year-analysis"  onClick={this.handleClickYear}>
@@ -447,6 +513,10 @@ diplayBestBacresults = ()=>{
   return bac_list
  
 }
+
+/*
+   end of handle events
+*/
 
 
   render(){
@@ -549,6 +619,28 @@ diplayBestBacresults = ()=>{
                       />
                     </Card.Body>
                   </Card>
+                  <Card>
+                    <Card.Body>
+                    <Bar
+                        data={{ labels : this.state.years,  
+                              datasets: [
+                                { 
+                                  label: "Admis",
+                                  backgroundColor: greenBarColor,
+                                  data : this.state.admis_years
+                                  },
+                                  { 
+                                  label: "Ajourne",
+                                  backgroundColor: redBarColor,
+                                  data : this.state.ajrn_years
+                                  }
+                              ]
+                        }}
+                        width={100}
+                        height={80}
+                       />         
+                    </Card.Body>
+                  </Card>
                   </div>              
               </section>
               {
@@ -643,6 +735,7 @@ diplayBestBacresults = ()=>{
                        />         
                     </Card.Body>
                   </Card> 
+                 
                     </Card.Body>
                   </Card>
                 </div>                
