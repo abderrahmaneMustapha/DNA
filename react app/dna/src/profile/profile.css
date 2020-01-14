@@ -1,0 +1,11 @@
+.Profile{
+    background-color:#2B2450;
+    width: 100vw;
+    height: 300vh;
+    display: flex;
+    flex-direction: column;
+  }
+.Profile *{
+    color: #E7E7EB;
+}
+

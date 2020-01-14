@@ -67,10 +67,13 @@ class Dashboard extends React.Component {
       bac_id: [],
 
       'admis_years' : [],
-      'ajrn_years' : []
+      'ajrn_years' : [],
 
+      'study_levels': ['MIAS','MGI'],
+      'study_field' : ['17','19','20','21','23'],     
 
-    }
+  }
+
     this.handleClickYear = this.handleClickYear.bind(this);
   
   }
@@ -246,7 +249,7 @@ calculatebestcourseyear = (result)=>{
   var temp_winrates= []
 
   for(var i=0; i< temp.length;i++){  
-    if( temp_courses.indexOf(temp[i].cours) <0){
+    if( (temp_courses.indexOf(temp[i].course) === -1) && temp[i].winrate > 0 ){
       temp_courses.push(temp[i].course)
       temp_years.push(temp[i].year)
       temp_bac_paths.push(temp[i].bac_path)
@@ -273,7 +276,7 @@ calculatebestcourseyear = (result)=>{
    temp_bac_paths = []
    temp_winrates= []
   for(var i=0; i< temp.length;i++){  
-    if( temp_courses.indexOf(temp[i].cours) <0){
+    if( (temp_courses.indexOf(temp[i].course) === -1) && temp[i].winrate > 0 ){
     temp_courses.push(temp[i].course)
     temp_years.push(temp[i].year)
     temp_bac_paths.push(temp[i].bac_path)
@@ -647,6 +650,8 @@ diplayBestBacresults = ()=>{
                 /* generale info section end */
               }
 
+              <hr />
+
               {
                 /* year analysis section start */
               }
@@ -687,7 +692,7 @@ diplayBestBacresults = ()=>{
                         data={{ labels : this.state.year_cours_worst.slice(0,5),  
                               datasets: [
                                 { 
-                                  label: "best field for "+this.state.current_year,
+                                  label: "worste modules for "+this.state.current_year,
                                   backgroundColor: redBarColor,
                                   data : this.state.year_winrate_worst.slice(0,5)
                                   }
@@ -698,41 +703,17 @@ diplayBestBacresults = ()=>{
                        />         
                     </Card.Body>
                   </Card> 
-
+               
                    <Card>
                     <Card.Body>
-                    <Bar
-                        data={{ labels : this.state.best_gender,  
-                              datasets: [
-                                { 
-                                  label: "Male Vs Female Admis since  2010",
-                                  backgroundColor: greenBarColor,
-                                  data : this.state.best_gender_winrate
-                                  }
-                              ]
-                        }}
-                        width={100}
-                        height={80}
-                       />          
+                          
                     </Card.Body>
                   </Card>         
 
 
                   <Card>
                     <Card.Body>
-                    <Bar
-                        data={{ labels : this.state.best_gender,  
-                              datasets: [
-                                { 
-                                  label: "Male Vs Female Admis since  2010",
-                                  backgroundColor: greenBarColor,
-                                  data : this.state.best_gender_winrate
-                                  }
-                              ]
-                        }}
-                        width={100}
-                        height={80}
-                       />         
+                           
                     </Card.Body>
                   </Card> 
                  

@@ -1,0 +1,8 @@
+.Courses{
+    background-color:#2B2450;
+    width: 100vw;
+    height: 300vh;
+  }
+.Courses *{
+      color: #E7E7EB;
+  }
