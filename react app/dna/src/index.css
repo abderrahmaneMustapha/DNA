@@ -12,3 +12,7 @@ code {
     monospace;
 }
 
+*  .btn-orange{
+  background-color: #FC7C00;
+  color: #E7E7EB;
+}
