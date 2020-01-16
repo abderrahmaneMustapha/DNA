@@ -8,4 +8,17 @@
 .Profile *{
     color: #E7E7EB;
 }
+.search-student-form{
+  display: flex;
+  flex-direction: row;
+}
 
+.semster-module{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#semesters li{
+  cursor: pointer;
+  font-size: smaller;
+}
