@@ -11,10 +11,12 @@ class Profile extends React.Component {
     this.state = {
       default_student: 14011599308,
       default_semester: 1,
-      default_study_field : '17',
+      default_study_field : 17,
+      radar_courses : [],
       study_fields : [] 
         
     }
+    this.handleClickSemester = this.handleClickSemester.bind(this);
   }
 
   getStudents = (result)=>{
@@ -23,7 +25,17 @@ class Profile extends React.Component {
   }
 
   getSemesterCourses = (result)=>{
-
+    var temp = []
+    if (result.length > 0){
+      result.map((s)=>{
+        temp.push(s['cours_id'])
+      })
+    }
+    
+    this.setState({
+      radar_courses : [...temp]
+    }
+    )
   }
   
   getUnivFields = (result) =>{
@@ -36,12 +48,13 @@ class Profile extends React.Component {
         result[i]['semesters'] = [...semesters.slice(0,4)]
       }
     }
+   
    this.setState(
      {
       'study_fields': [...result]
      }
    )
-   console.log(this.state.study_fields)
+  
   }
 
   connectToPerformance = ()=>{
@@ -55,10 +68,10 @@ class Profile extends React.Component {
     )
   }
 
-  connectToCourses = ()=>{
-    
-    fetch('http://127.0.0.1:8000/courses/?semestre='+this.state.default_semester+
-                                    '&?study_field='+this.state.default_study_field).
+  connectToCourses = (s,f)=>{
+    let semester = s ?  s :this.state.default_semester
+    let field =  f ? f:this.state.default_study_field
+    fetch('http://127.0.0.1:8000/courses/?semestre='+semester+'&study_field='+field).
       then(res => res.json()).
       then(
         result =>{
@@ -84,14 +97,29 @@ class Profile extends React.Component {
    
   }
 
+  handleClickSemester = (e)=>{
+   
+   let field = e.target.firstChild.value
+   let semester = e.target.lastChild.innerText
+    
+   this.setState({
+    default_semester: field,
+    default_study_field : semester,
+   })
+ 
+
+   this.connectToCourses(semester,field)
+  }
+
   semestersList(){     
     return this.state.study_fields.map((element)=>
-    <li className="list-group-item">
-    <input  value={element['field_id']} hidden/>
-    {element['name']}
+    <li className="list-group-item">   
+    <p>{element['name']} semsters</p>
     <ul id="semesters" className="list-group flex-row">
       {element.semesters.map((s)=>
-       <li className="list-group-item">{s}</li>
+       <li className="list-group-item" onClick={this.handleClickSemester}>
+       <input  value={element['field_id']} hidden/> 
+       <p>{s}</p></li>
       )}
     </ul>
   
@@ -132,7 +160,7 @@ class Profile extends React.Component {
           <section>
             <Card  >
                 <Card.Body>
-                  <ul id="bac_list" className="list-group">
+                  <ul id="semesters_list" className="list-group">
                   {semestersList}
                   </ul>      
                 </Card.Body>
@@ -145,7 +173,7 @@ class Profile extends React.Component {
          <Card id="best-courses">
             <Card.Body>
                 <Radar                             
-                  data={{ labels :['A','B','C','D','L','M','Q'],  
+                  data={{ labels :this.state.radar_courses,  
                           datasets: [
                             { 
                               label: "TP ",

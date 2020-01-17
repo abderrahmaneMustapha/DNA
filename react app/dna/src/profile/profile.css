@@ -22,3 +22,8 @@
   cursor: pointer;
   font-size: smaller;
 }
+
+#semesters li:hover{
+  background-color: #2B2450;
+}
+
