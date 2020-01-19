@@ -13,7 +13,9 @@ class Profile extends React.Component {
       default_semester: 1,
       default_study_field : 17,
       radar_courses : [],
+      student_preformance: [],
       study_fields : [] 
+
         
     }
     this.handleClickSemester = this.handleClickSemester.bind(this);
@@ -57,16 +59,36 @@ class Profile extends React.Component {
   
   }
 
+  getStudentsPerformanceSemester = (result)=>{
+    var courses = this.state.radar_courses
+    var performance = []
+    for(var c=0;c < courses.length ; c++){
+      for(var j=0; j < result.length;j++){
+        if( courses[c] == result[j].cours) {
+          performance.push( result[c]['exam'])
+          
+       }
+      }
+    
+    }
+    console.log(performance)
+    
+  }
+
   connectToPerformance = ()=>{
     
   fetch('http://127.0.0.1:8000/performance/?student='+this.state.default_student).
     then(res => res.json()).
     then(
       result =>{
-        this.getStudents(result)    
-      }
+        this.getStudents(result) 
+        this.getStudentsPerformanceSemester(result)
+    
+        }   
+      
     )
   }
+
 
   connectToCourses = (s,f)=>{
     let semester = s ?  s :this.state.default_semester
@@ -92,8 +114,9 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.connectToStudyFields()
-    this.connectToPerformance()
+   
     this.connectToCourses()
+    this.connectToPerformance()
    
   }
 
@@ -109,6 +132,7 @@ class Profile extends React.Component {
  
 
    this.connectToCourses(semester,field)
+   this.connectToPerformance()
   }
 
   semestersList(){     
