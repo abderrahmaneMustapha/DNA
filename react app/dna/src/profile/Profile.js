@@ -5,18 +5,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import { Radar,defaults } from 'react-chartjs-2';
 defaults.scale.ticks.suggestedMax = 20
+defaults.scale.ticks.suggestedMin = 5
 class Profile extends React.Component {
   constructor(){
     super();
     this.state = {
-      default_student: 14011599308,
+      default_student: 14010996874,
       default_semester: 1,
       default_study_field : 17,
       radar_courses : [],
-      student_preformance: [],
-      study_fields : [] 
-
-        
+      student__avgs: [],
+      student__exams: [],
+      student__tps: [],
+      student__tds: [],
+      study_fields : [],
+      algo_results : [],        
     }
     this.handleClickSemester = this.handleClickSemester.bind(this);
   }
@@ -53,7 +56,7 @@ class Profile extends React.Component {
    
    this.setState(
      {
-      'study_fields': [...result]
+      study_fields: [...result]
      }
    )
   
@@ -61,18 +64,36 @@ class Profile extends React.Component {
 
   getStudentsPerformanceSemester = (result)=>{
     var courses = this.state.radar_courses
-    var performance = []
+    var avg = []
+    var exam = []
+    var tp = []
+    var td = []
     for(var c=0;c < courses.length ; c++){
       for(var j=0; j < result.length;j++){
-        if( courses[c] == result[j].cours) {
-          performance.push( result[c]['exam'])
-          
+        if( JSON.stringify(courses[c]) == JSON.stringify(result[j].cours)) {
+          avg.push(result[c].cours_avg)
+          exam.push(result[c].exam)   
+          tp.push(result[c].tp)   
+          td.push(result[c].td)            
        }
       }
     
     }
-    console.log(performance)
+   
+
+    this.setState({
+      'student__avgs':[...avg],
+      'student__exams':[...exam],
+      'student__tps':[...tp],
+      'student__tds':[...td]
+    })
     
+  }
+
+  getAlgoResult = (result)=>{   
+    this.setState({
+      algo_results: [...result ]
+    })
   }
 
   connectToPerformance = ()=>{
@@ -112,11 +133,21 @@ class Profile extends React.Component {
       )
     }
 
+    connectToAlgo = ()=>{
+      fetch('http://127.0.0.1:8000/algore_sults/?student_id='+this.state.default_student).
+      then(res => res.json()).
+      then(
+        result =>{
+          this.getAlgoResult(result)    
+        }
+      )
+    }
+
   componentDidMount() {
-    this.connectToStudyFields()
-   
+    this.connectToStudyFields()   
     this.connectToCourses()
     this.connectToPerformance()
+    this. connectToAlgo()
    
   }
 
@@ -150,13 +181,32 @@ class Profile extends React.Component {
   </li>
     )
   }
+
+  algoResults(){
+  var algo_results = this.state.algo_results
+    
+      return algo_results.map((element)=>
+        <div className="">
+        <div>
+          <h6>Algo 01</h6>
+           <div>{element.algo1_avg}</div>
+        </div>
+        <div>
+          <h6>Algo 02</h6>
+          <div></div>
+        </div>
+      </div>
+      )
+       
+      
+  }
   render(){
     const greenBarColor = "#18BD9B"
     const redBarColor = "#E54787"
     const whiteBarColor = "#E7E7EB"
     const orangeBarColor = "#FC7C00"
     const semestersList = this.semestersList()
-
+    const algoResults = this.algoResults()
     const cardWidth = "22rem"
     return (
       
@@ -193,8 +243,8 @@ class Profile extends React.Component {
          {
            /* radar section */
          }
-         <section>
-         <Card id="best-courses">
+         <section className="flex">
+         <Card id="student_performance">
             <Card.Body>
                 <Radar                             
                   data={{ labels :this.state.radar_courses,  
@@ -202,36 +252,44 @@ class Profile extends React.Component {
                             { 
                               label: "TP ",
                               borderColor: greenBarColor,
-                              data : [10,12,20],
+                              data : this.state.student__tps,
                               fill : false
                               },
                               { 
                               label: "TD ",
                               borderColor: redBarColor,
-                              data : [10,12,20],
+                              data : this.state.student__tds,
                               fill : false
                               },
                               { 
                               label: "EXAM ",
                               borderColor: whiteBarColor,
-                              data :[10,12,20],
+                              data :this.state.student__exams,
                               fill : false
                               },
                               { 
                               label: "AVG",
                               borderColor: orangeBarColor,
-                              data :[10,12,20],
+                              data :this.state.student__avgs,
                               fill : false
                               }
                           ],    
                   }}                     
-                  width={300}
-                  height={300}
+                  width={0}
+                  height={250}
                   options={{ maintainAspectRatio: false }}
                 />
            </Card.Body>
           </Card>
+
+          <Card id="algo_performance">
+            <Card.Body>
+             {algoResults}
+           </Card.Body>
+          </Card>
               </section>
+
+            
        
         </article>
 
