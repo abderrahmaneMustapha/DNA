@@ -13,9 +13,18 @@
   flex-direction: row;
 }
 
+
+ article section,.semster-module .card{
+  border: 1.3px solid #565697;
+}
 .semster-module{
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.semster-module section{
+  margin: 0em 1em 1em 0.5em ;
+ 
 }
 
 #semesters li{
@@ -31,4 +40,20 @@
 #student_performance{
   padding: 0;
   width: 70vw;
+}
+
+#algo_1, #algo_2{
+  display: grid;
+  grid-template-columns: 14em 60%;
+}
+
+#algo_1 h6, #algo_2 h6{  
+  font-size: xx-large;
+}
+table, th, td {
+  border: 1px;
+}
+
+.algo-results{
+  margin-top: 4.3rem;
 }

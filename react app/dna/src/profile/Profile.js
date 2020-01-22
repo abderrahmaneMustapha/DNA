@@ -186,16 +186,58 @@ class Profile extends React.Component {
   var algo_results = this.state.algo_results
     
       return algo_results.map((element)=>
-        <div className="">
-        <div>
-          <h6>Algo 01</h6>
-           <div>{element.algo1_avg}</div>
+        <div className="col algo-results">
+        <div  id="algo_1">
+               
+        <h6>Algo 01</h6> 
+           <table class="table">
+            <thead>            
+              <tr>              
+                <th scope="col">TD</th>
+                <th scope="col">TP</th>
+                <th scope="col">EXAM</th>
+                <th scope="col">AVG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{element.algo1_td}</td>
+                <td>{element.algo1_tp}</td>
+                <td>{element.algo1_exam}</td>
+                <td>{element.algo1_avg}</td>
+              </tr>             
+            </tbody>
+          </table>
+
         </div>
-        <div>
+
+        <div id="algo_2">
           <h6>Algo 02</h6>
-          <div></div>
+          
+          <table class="table">
+            <thead>
+            
+              <tr>              
+                <th scope="col">TD</th>
+                <th scope="col">TP</th>
+                <th scope="col">EXAM</th>
+                <th scope="col">AVG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{element.algo1_td}</td>
+                <td>{element.algo1_tp}</td>
+                <td>{element.algo1_exam}</td>
+                <td>{element.algo1_avg}</td>
+              </tr>             
+            </tbody>
+          </table>
         </div>
+
+
       </div>
+    
       )
        
       
@@ -276,7 +318,7 @@ class Profile extends React.Component {
                           ],    
                   }}                     
                   width={0}
-                  height={250}
+                  height={450}
                   options={{ maintainAspectRatio: false }}
                 />
            </Card.Body>
