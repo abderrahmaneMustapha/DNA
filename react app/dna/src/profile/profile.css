@@ -14,22 +14,24 @@
 }
 
 
- article section,.semster-module .card{
+ article section{
   border: 1.3px solid #565697;
+  border-radius: 2px;
+  
 }
 .semster-module{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 30% 70%;
 }
 
 .semster-module section{
   margin: 0em 1em 1em 0.5em ;
- 
 }
 
 #semesters li{
   cursor: pointer;
   font-size: smaller;
+ 
 }
 
 #semesters li:hover{
@@ -52,8 +54,28 @@
 }
 table, th, td {
   border: 1px;
+  border-color:  #565697;
 }
 
 .algo-results{
   margin-top: 4.3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #565697;
+ 
 }
+
+#performances-all .card{
+  margin: 1.5em 1em 0.5em 1em ;
+  padding: 1em;
+}
+.admis{
+  background-color: #3E5570;
+}
+
+ .ajourne{
+  background-color: #713C65;
+}
+
+
+
+

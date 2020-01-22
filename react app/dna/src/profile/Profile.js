@@ -4,7 +4,8 @@ import './profile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import { Radar,defaults } from 'react-chartjs-2';
-defaults.scale.ticks.suggestedMax = 20
+
+
 defaults.scale.ticks.suggestedMin = 5
 class Profile extends React.Component {
   constructor(){
@@ -19,13 +20,17 @@ class Profile extends React.Component {
       student__tps: [],
       student__tds: [],
       study_fields : [],
-      algo_results : [],        
+      algo_results : [], 
+      all_performances : []       
     }
     this.handleClickSemester = this.handleClickSemester.bind(this);
   }
 
   getStudents = (result)=>{
-     var temp = []
+    console.log(result)
+     this.setState({
+       all_performances : [...result]
+     })
        
   }
 
@@ -238,17 +243,30 @@ class Profile extends React.Component {
 
       </div>
     
-      )
-       
-      
+      )         
+  }
+
+  allPerformancesList (){
+    var performances = this.state.all_performances
+    var result = []
+    for(var i=0; i < performances.length ; i++){
+      var color = ""
+      if( parseFloat(performances[i].cours_avg) >= 10) {color = "admis"}
+      else{ color="ajourne"}
+      result.push(<Card className={color}>{performances[i].cours_avg}</Card>)
+    }
+
+    return result
   }
   render(){
+    defaults.scale.ticks.suggestedMax = 20
     const greenBarColor = "#18BD9B"
     const redBarColor = "#E54787"
     const whiteBarColor = "#E7E7EB"
     const orangeBarColor = "#FC7C00"
     const semestersList = this.semestersList()
     const algoResults = this.algoResults()
+    const performancesList = this.allPerformancesList()
     const cardWidth = "22rem"
     return (
       
@@ -339,9 +357,14 @@ class Profile extends React.Component {
           /* more details info */
         }
         
-        <article>
-         <section></section>
-         <section></section>
+        <article className="semster-module">
+         <section >
+           
+         </section>
+         <section id="performances-all">
+           <h1 className="text-center">All Courses Results</h1>
+            {performancesList}
+         </section>
         </article>
       </div>
     );

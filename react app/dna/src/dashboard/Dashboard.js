@@ -6,7 +6,7 @@ import { HorizontalBar,defaults,Bar,HeatMap } from 'react-chartjs-2';
 
 defaults.global.defaultFontColor = '#E7E7EB';
 defaults.scale.ticks.beginAtZero = true; 
-defaults.scale.ticks.suggestedMax = 100
+
 
 var bac_fields = [
   {
@@ -523,6 +523,7 @@ diplayBestBacresults = ()=>{
 
 
   render(){
+    defaults.scale.ticks.suggestedMax = 100
     const cardWidth = "22rem"
     const greenBarColor = "#18BD9B"
     const redBarColor = "#E54787"
