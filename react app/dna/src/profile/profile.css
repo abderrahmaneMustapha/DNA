@@ -1,7 +1,7 @@
 .Profile{
     background-color:#2B2450;
     width: 100vw;
-    height: 300vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -13,15 +13,19 @@
   flex-direction: row;
 }
 
-
- article section{
-  border: 1.3px solid #565697;
+article section{
   border-radius: 2px;
-  
 }
+ #performances-all, #radar-section {
+  border-left: 1px solid #565697;
+}
+
+
 .semster-module{
   display: grid;
   grid-template-columns: 30% 70%;
+  border-top: 1px solid #565697;
+  padding-top: 2em;
 }
 
 .semster-module section{

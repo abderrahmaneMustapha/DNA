@@ -264,7 +264,21 @@ class Profile extends React.Component {
       var color = ""
       if( parseFloat(performances[i].cours_avg) >= 10) {color = "admis"}
       else{ color="ajourne"}
-      result.push(<Card className={color}>{performances[i].cours_avg}</Card>)
+      result.push(
+      <Card className={color}>
+          <Card.Header className="d-flex justify-content-around">
+            <p className="font-weight-bold">{performances[i].cours}</p>
+            <p className="font-weight-bold">{performances[i].date}</p>
+          </Card.Header>
+          <Card.Body className="d-flex" >
+            <p>{performances[i].td}/</p>
+            <p>{performances[i].tp}/</p>
+            <p>{performances[i].exam}/</p>
+            <p>{performances[i].cours_avg}/</p>
+                
+          </Card.Body>
+      
+      </Card>)
     }
 
 
@@ -316,7 +330,7 @@ class Profile extends React.Component {
         {
            /* semesters section */
          }
-          <section>
+          <section  id="semesers-section" >
             <Card  >
                 <Card.Body>
                   <ul id="semesters_list" className="list-group">
@@ -329,7 +343,7 @@ class Profile extends React.Component {
          {
            /* radar section */
          }
-         <section className="flex">
+         <section id="radar-section" className="flex">
          <Card id="student_performance">
             <Card.Body>
                 <Radar                             
@@ -369,6 +383,7 @@ class Profile extends React.Component {
           </Card>
 
           <Card id="algo_performance">
+          
             <Card.Body>
              {algoResults}
            </Card.Body>
@@ -388,7 +403,8 @@ class Profile extends React.Component {
            
          </section>
          <section id="performances-all">
-           <h1 className="text-center">All Courses Results</h1>
+         <header className="text-center"> <h3 className="text-center">All Courses Results</h3></header>
+          
             {performancesList}
             <ul id="performances_list_index" className="list-group">
             <p>Pages : </p>

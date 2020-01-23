@@ -30,10 +30,21 @@
     border-style:none;
 }
 
+#year-analysis-section{
+    border-top: 1px solid #565697;       
+}
+
+* header{
+ padding: 2em 0em 1.5em 0em;
+}
+
 #years_analysis_card .card-body{
     display: grid;
     grid-template-columns: auto auto;
     grid-gap:1em;
+}
+aside{
+    border-left: 1px solid #565697;
 }
 #bac_list li:hover, .list-group-item:hover, #years_list .list-group-item:hover{
     background-color: #2B2450;

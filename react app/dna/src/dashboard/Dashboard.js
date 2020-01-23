@@ -532,7 +532,7 @@ diplayBestBacresults = ()=>{
 
     return (
       <div className="Dashboard">
-        <h1 className="text-center">Dashboard</h1>
+        <header className="text-center"><h1 className="text-center">Dashboard</h1></header>
         <div className="container">
           <div className="row">
 
@@ -656,7 +656,7 @@ diplayBestBacresults = ()=>{
               {
                 /* year analysis section start */
               }
-              <section>
+              <section id="year-analysis-section">
                 <header className="text-center"><h3>Years Analysis</h3></header>
                 <div id="year-analysis">
                 <nav className="navbar navbar-expand-lg navbar-light">
