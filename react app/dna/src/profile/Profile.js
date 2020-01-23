@@ -21,7 +21,8 @@ class Profile extends React.Component {
       student__tds: [],
       study_fields : [],
       algo_results : [], 
-      all_performances : []       
+      all_performances : [],  
+      all_performances_page_slice : 5  
     }
     this.handleClickSemester = this.handleClickSemester.bind(this);
   }
@@ -171,6 +172,15 @@ class Profile extends React.Component {
    this.connectToPerformance()
   }
 
+  handleClickPerformancePage = (e)=>{
+    let field = e.target.innerText
+    console.log(Number(this.state.all_performances_page_slice))
+    this.setState({
+      all_performances_page_slice: 5 * Number(field),
+    })
+    
+  }
+
   semestersList(){     
     return this.state.study_fields.map((element)=>
     <li className="list-group-item">   
@@ -248,6 +258,7 @@ class Profile extends React.Component {
 
   allPerformancesList (){
     var performances = this.state.all_performances
+  
     var result = []
     for(var i=0; i < performances.length ; i++){
       var color = ""
@@ -256,7 +267,20 @@ class Profile extends React.Component {
       result.push(<Card className={color}>{performances[i].cours_avg}</Card>)
     }
 
+
+    return result.slice(this.state.all_performances_page_slice-5,this.state.all_performances_page_slice)
+  }
+
+  allPerformancesPagesIndex(){
+    var performances = this.state.all_performances
+    var result = []
+    for(var i=0; i < Math.ceil(performances.length/5) ; i++){
+     
+    result.push(<li onClick={this.handleClickPerformancePage} className="list-group-item">{i+1}</li>)
+    }
+     
     return result
+
   }
   render(){
     defaults.scale.ticks.suggestedMax = 20
@@ -267,6 +291,7 @@ class Profile extends React.Component {
     const semestersList = this.semestersList()
     const algoResults = this.algoResults()
     const performancesList = this.allPerformancesList()
+    const performancesListIndex = this.allPerformancesPagesIndex()
     const cardWidth = "22rem"
     return (
       
@@ -296,7 +321,8 @@ class Profile extends React.Component {
                 <Card.Body>
                   <ul id="semesters_list" className="list-group">
                   {semestersList}
-                  </ul>      
+                  </ul>  
+                     
                 </Card.Body>
             </Card> 
           </section>
@@ -364,6 +390,9 @@ class Profile extends React.Component {
          <section id="performances-all">
            <h1 className="text-center">All Courses Results</h1>
             {performancesList}
+            <ul id="performances_list_index" className="list-group">
+            <p>Pages : </p>
+            {performancesListIndex}</ul>
          </section>
         </article>
       </div>

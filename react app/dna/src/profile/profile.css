@@ -28,9 +28,10 @@
   margin: 0em 1em 1em 0.5em ;
 }
 
-#semesters li{
+#semesters li,#performances_list_index li{
   cursor: pointer;
   font-size: smaller;
+
  
 }
 
@@ -74,6 +75,25 @@ table, th, td {
 
  .ajourne{
   background-color: #713C65;
+}
+
+#performances_list_index{
+display:flex;
+flex-direction: row;
+background-color: #261F49;
+margin:0.3em;
+}
+
+#performances_list_index li{
+  background-color: #261F49;
+  margin: 0.3em;
+
+}
+#performances_list_index li:hover{
+  background-color: #2B2450;
+}
+#performances_list_index p{
+  margin: 0.8em 0.3em 0.1em 0.7em;
 }
 
 
