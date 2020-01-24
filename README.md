@@ -1,3 +1,6 @@
+# DNA
+>  is a university analytics web app
+## TODO
 - [x] Collect Data
 - [x] Clean Data
 - [ ] get city from student adress
