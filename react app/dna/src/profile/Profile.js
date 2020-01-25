@@ -4,6 +4,7 @@ import './profile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import { Radar,defaults } from 'react-chartjs-2';
+import  HeatMap from 'react-heatmap-grid';
 
 
 defaults.scale.ticks.suggestedMin = 5
@@ -297,6 +298,16 @@ class Profile extends React.Component {
 
   }
   render(){
+  
+    const xLabels = new Array(30).fill(0).map((_, i) => `${i}`);
+    const yLabels = ['Sun', 'Mon', 'Tue','Wed','Thu','Fri','Sat'];
+    const data = new Array(yLabels.length)
+    .fill(0)
+    .map(() => new Array(xLabels.length).fill(0).map(() => Math.floor(Math.random() * 100)));
+    const xLabelsVisibility = new Array(24)
+  .fill(0)
+  .map((_, i) => (i % 2 === 0 ? true : false));
+
     defaults.scale.ticks.suggestedMax = 20
     const greenBarColor = "#18BD9B"
     const redBarColor = "#E54787"
@@ -306,7 +317,7 @@ class Profile extends React.Component {
     const algoResults = this.algoResults()
     const performancesList = this.allPerformancesList()
     const performancesListIndex = this.allPerformancesPagesIndex()
-    const cardWidth = "22rem"
+    
     return (
       
       <div className="Profile">
@@ -399,9 +410,26 @@ class Profile extends React.Component {
         }
         
         <article className="semster-module">
-         <section >
-           
+         <section id="performances-more">
+         <Card>
+         <HeatMap
+            xLabels={xLabels}
+            yLabels={yLabels}
+            data={data}
+            height={15}
+          
+            xLabelsVisibility={xLabelsVisibility}
+          
+            cellStyle={(background, value, min, max, data, x, y) => ({
+              background: `rgba(86, 86, 151, ${1 - (max - value) / (max - min)})`,
+              fontSize: "11px",
+            })}
+          />
+         </Card>
+  
          </section>
+
+
          <section id="performances-all">
          <header className="text-center"> <h3 className="text-center">All Courses Results</h3></header>
           
