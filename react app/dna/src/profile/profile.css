@@ -100,6 +100,8 @@ margin:0.3em;
   margin: 0.8em 0.3em 0.1em 0.7em;
 }
 
-
-
+#performances-more .card{
+ margin-left: -0.9em;
+ padding-top: 4em;
+}
 

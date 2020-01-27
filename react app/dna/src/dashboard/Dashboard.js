@@ -2,7 +2,7 @@ import React from 'react';
 import './dashboard.css';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { HorizontalBar,defaults,Bar,HeatMap } from 'react-chartjs-2';
+import { HorizontalBar,defaults,Bar } from 'react-chartjs-2';
 
 defaults.global.defaultFontColor = '#E7E7EB';
 defaults.scale.ticks.beginAtZero = true; 

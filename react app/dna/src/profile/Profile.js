@@ -3,8 +3,9 @@ import './profile.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
-import { Radar,defaults } from 'react-chartjs-2';
+import { Radar,defaults,Bar } from 'react-chartjs-2';
 import  HeatMap from 'react-heatmap-grid';
+
 
 
 defaults.scale.ticks.suggestedMin = 5
@@ -23,17 +24,46 @@ class Profile extends React.Component {
       study_fields : [],
       algo_results : [], 
       all_performances : [],  
-      all_performances_page_slice : 5  
+      all_performances_page_slice : 5,
+      years : [],
+      student_year_winrate : [],
+      student_year_loserate : []
+       
     }
     this.handleClickSemester = this.handleClickSemester.bind(this);
   }
 
   getStudents = (result)=>{
-    console.log(result)
+
      this.setState({
        all_performances : [...result]
      })
-       
+     let winrate = []
+     let loserate = []
+     let years = this.state.years
+     for(var j=0; j < years.length; j++){
+       var count_m = 0
+       var count_l = 0
+      for(var i=0; i < result.length; i++){
+        
+        if(result[i].date == (j+1)){
+          if(result[i].cours_avg >= 10){
+            count_m ++
+          }
+          else{
+            count_l++
+          }
+        }
+      }
+      winrate.push((count_m / (count_m +count_l)) *  100)
+      loserate.push((count_l / (count_m +count_l)) *  100)
+     }
+
+     this.setState({
+       student_year_winrate : [...winrate],
+       student_year_loserate : [... loserate]
+     })
+     
   }
 
   getSemesterCourses = (result)=>{
@@ -103,6 +133,19 @@ class Profile extends React.Component {
     })
   }
 
+  getscholaryears = (result)=>{
+    let temp = []
+    for(var i=0; i< result.length;i++){
+
+       temp.push(result[i]['scholar_year'])
+    } 
+    
+     
+    this.setState({
+      years : [...temp]
+    })
+  }
+
   connectToPerformance = ()=>{
     
   fetch('http://127.0.0.1:8000/performance/?student='+this.state.default_student).
@@ -149,12 +192,24 @@ class Profile extends React.Component {
         }
       )
     }
+    
+    connectToScholarYear = ()=>{
+      fetch('http://127.0.0.1:8000/scholar_years/').
+      then(res => res.json()).
+      then(
+        result =>{
+          this.getscholaryears(result)    
+        }
+      )
+    }
 
   componentDidMount() {
+    this.connectToScholarYear()
     this.connectToStudyFields()   
     this.connectToCourses()
     this.connectToPerformance()
     this. connectToAlgo()
+    
    
   }
 
@@ -299,15 +354,15 @@ class Profile extends React.Component {
   }
   render(){
   
-    const xLabels = new Array(30).fill(0).map((_, i) => `${i}`);
+    const xLabels = new Array(29).fill(0).map((_, i) => `${i+1}`);
     const yLabels = ['Sun', 'Mon', 'Tue','Wed','Thu','Fri','Sat'];
     const data = new Array(yLabels.length)
     .fill(0)
     .map(() => new Array(xLabels.length).fill(0).map(() => Math.floor(Math.random() * 100)));
     const xLabelsVisibility = new Array(24)
   .fill(0)
-  .map((_, i) => (i % 2 === 0 ? true : false));
-
+  .map((_, i) => (i % 3 === 0 ? true : false));
+  const semesters = [1,2,3,4,5,6]
     defaults.scale.ticks.suggestedMax = 20
     const greenBarColor = "#18BD9B"
     const redBarColor = "#E54787"
@@ -393,8 +448,7 @@ class Profile extends React.Component {
            </Card.Body>
           </Card>
 
-          <Card id="algo_performance">
-          
+          <Card id="algo_performance">          
             <Card.Body>
              {algoResults}
            </Card.Body>
@@ -411,20 +465,80 @@ class Profile extends React.Component {
         
         <article className="semster-module">
          <section id="performances-more">
+         
+         {/* more vs less than 10 per semesters */}
          <Card>
-         <HeatMap
-            xLabels={xLabels}
-            yLabels={yLabels}
-            data={data}
-            height={15}
+            <h6 className="text-center">Modules Admis vs Ajourne per Semesters</h6>
+          <Card.Body >
+          <Bar
+            data={{ labels : semesters,  
+                  datasets: [
+                    { 
+                      label: "Admis",
+                      backgroundColor: greenBarColor,
+                      data : this.state.admis_years
+                      },
+                      { 
+                      label: "Ajourne",
+                      backgroundColor: redBarColor,
+                      data : this.state.ajrn_years
+                      }
+                  ]
+            }}
+            width={100}
+            height={80}
+            />   
+          </Card.Body>         
+         </Card>
+
+        
+         {/* more vs less than 10 per year */}
+         <Card>
+            <h6 className="text-center">Modules Admis vs Ajourne per Year</h6>
+          <Card.Body >
+          <Bar
           
-            xLabelsVisibility={xLabelsVisibility}
-          
-            cellStyle={(background, value, min, max, data, x, y) => ({
-              background: `rgba(86, 86, 151, ${1 - (max - value) / (max - min)})`,
-              fontSize: "11px",
-            })}
-          />
+            data={{ labels : this.state.years,  
+                  datasets: [
+                    { 
+                      label: "Admis",
+                      backgroundColor: greenBarColor,
+                      data : this.state.student_year_winrate
+                      },
+                      { 
+                      label: "Ajourne",
+                      backgroundColor: redBarColor,
+                      data : this.state.student_year_loserate
+                      }
+                  ]
+            }}
+            width={100}
+            height={80}
+            />  
+          </Card.Body>         
+         </Card>
+
+
+         {/* moodle daily activity */}
+
+         <Card>
+            <h6 className="text-center">Moodle daily activity</h6>
+          <Card.Body >
+            <HeatMap
+              xLabels={xLabels}
+              yLabels={yLabels}
+              yLabelWidth={45}
+              data={data}
+              height={17}
+              fontSize = {11}
+              xLabelsVisibility={xLabelsVisibility}
+            
+              cellStyle={(background, value, min, max, data, x, y) => ({
+                background: `rgba(86, 86, 151, ${1 - (max - value) / (max - min)})`,
+                fontSize: "11px",
+              })}
+            />
+          </Card.Body>         
          </Card>
   
          </section>
@@ -432,7 +546,6 @@ class Profile extends React.Component {
 
          <section id="performances-all">
          <header className="text-center"> <h3 className="text-center">All Courses Results</h3></header>
-          
             {performancesList}
             <ul id="performances_list_index" className="list-group">
             <p>Pages : </p>
