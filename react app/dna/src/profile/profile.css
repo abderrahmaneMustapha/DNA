@@ -13,6 +13,19 @@
   flex-direction: row;
 }
 
+.profile-header input{
+  height: 5em;
+  width: 80%;
+  margin-left: 1.6em;
+  font-size: large;
+}
+
+.profile-header button{
+  display: inline;
+  width: 10%;
+ 
+}
+
 article section{
   border-radius: 2px;
 }
@@ -105,3 +118,7 @@ margin:0.3em;
  padding-top: 4em;
 }
 
+.btn-orange{
+  background-color: #FC7C00;
+  border-color: #FC7C00;
+}

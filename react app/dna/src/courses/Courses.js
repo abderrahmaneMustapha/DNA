@@ -12,8 +12,7 @@ class Courses extends React.Component {
     }
   }
   componentDidMount() {
-    
-
+  
   }
   render(){
     return (

@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import { Radar,defaults,Bar } from 'react-chartjs-2';
 import  HeatMap from 'react-heatmap-grid';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 defaults.scale.ticks.suggestedMin = 5
@@ -31,6 +32,7 @@ class Profile extends React.Component {
        
     }
     this.handleClickSemester = this.handleClickSemester.bind(this);
+    this.handleSearchInput = this.handleSearchInput.bind(this)
   }
 
   getStudents = (result)=>{
@@ -124,7 +126,8 @@ class Profile extends React.Component {
       'student__tps':[...tp],
       'student__tds':[...td]
     })
-    
+
+
   }
 
   getAlgoResult = (result)=>{   
@@ -145,6 +148,7 @@ class Profile extends React.Component {
       years : [...temp]
     })
   }
+
 
   connectToPerformance = ()=>{
     
@@ -172,6 +176,8 @@ class Profile extends React.Component {
         }
       )
     }
+
+  
 
     connectToStudyFields = ()=>{
       fetch('http://127.0.0.1:8000/univ_field/').
@@ -208,9 +214,8 @@ class Profile extends React.Component {
     this.connectToStudyFields()   
     this.connectToCourses()
     this.connectToPerformance()
-    this. connectToAlgo()
     
-   
+    this.connectToAlgo()
   }
 
   handleClickSemester = (e)=>{
@@ -261,7 +266,7 @@ class Profile extends React.Component {
         <div  id="algo_1">
                
         <h6>Algo 01</h6> 
-           <table class="table">
+           <table class="table table-striped table-borderless">
             <thead>            
               <tr>              
                 <th scope="col">TD</th>
@@ -285,7 +290,7 @@ class Profile extends React.Component {
         <div id="algo_2">
           <h6>Algo 02</h6>
           
-          <table class="table">
+          <table class="table table-striped table-borderless">
             <thead>
             
               <tr>              
@@ -312,6 +317,8 @@ class Profile extends React.Component {
       )         
   }
 
+
+
   allPerformancesList (){
     var performances = this.state.all_performances
   
@@ -324,14 +331,28 @@ class Profile extends React.Component {
       <Card className={color}>
           <Card.Header className="d-flex justify-content-around">
             <p className="font-weight-bold">{performances[i].cours}</p>
-            <p className="font-weight-bold">{performances[i].date}</p>
+            <p className="font-weight-bold">{this.state.years[performances[i].date-1]}</p>
           </Card.Header>
-          <Card.Body className="d-flex" >
-            <p>{performances[i].td}/</p>
-            <p>{performances[i].tp}/</p>
-            <p>{performances[i].exam}/</p>
-            <p>{performances[i].cours_avg}/</p>
-                
+
+          <Card.Body >
+          <table class="table table-striped table-borderless">
+            <thead>            
+              <tr>              
+                <th scope="col">TD</th>
+                <th scope="col">TP</th>
+                <th scope="col">EXAM</th>
+                <th scope="col">AVG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{performances[i].td}</td>
+                <td>{performances[i].tp}</td>
+                <td>{performances[i].exam}</td>
+                <td>{performances[i].cours_avg}</td>
+              </tr>             
+            </tbody>
+          </table>  
           </Card.Body>
       
       </Card>)
@@ -340,6 +361,7 @@ class Profile extends React.Component {
 
     return result.slice(this.state.all_performances_page_slice-5,this.state.all_performances_page_slice)
   }
+
 
   allPerformancesPagesIndex(){
     var performances = this.state.all_performances
@@ -350,8 +372,13 @@ class Profile extends React.Component {
     }
      
     return result
-
   }
+
+  handleSearchInput(e){
+    console.log(e.target.value)
+  }
+
+
   render(){
   
     const xLabels = new Array(29).fill(0).map((_, i) => `${i+1}`);
@@ -380,11 +407,21 @@ class Profile extends React.Component {
           /* the header we can choose a student */
         }
 
-        <header className="">
-        <div className="form-group search-student">
-        <input  className=" input-group-text" type="button"/>
-        <input className="text-dark" type="text" value={this.state.default_student} />
-        
+        <header className="profile-header">
+        <div className="form-group search-student d-flex">  
+
+          <input 
+            className="text-dark input-group-text" 
+            type="search" 
+            value={this.state.default_student} 
+            onChange={this.handleSearchInput} 
+          />
+
+          <button 
+            className="input-group-text btn btn-orange" >
+            <FontAwesomeIcon icon={faSearch}
+             required/>
+          </button>
         </div>   
         </header>
 
@@ -465,33 +502,7 @@ class Profile extends React.Component {
         
         <article className="semster-module">
          <section id="performances-more">
-         
-         {/* more vs less than 10 per semesters */}
-         <Card>
-            <h6 className="text-center">Modules Admis vs Ajourne per Semesters</h6>
-          <Card.Body >
-          <Bar
-            data={{ labels : semesters,  
-                  datasets: [
-                    { 
-                      label: "Admis",
-                      backgroundColor: greenBarColor,
-                      data : this.state.admis_years
-                      },
-                      { 
-                      label: "Ajourne",
-                      backgroundColor: redBarColor,
-                      data : this.state.ajrn_years
-                      }
-                  ]
-            }}
-            width={100}
-            height={80}
-            />   
-          </Card.Body>         
-         </Card>
-
-        
+                
          {/* more vs less than 10 per year */}
          <Card>
             <h6 className="text-center">Modules Admis vs Ajourne per Year</h6>
