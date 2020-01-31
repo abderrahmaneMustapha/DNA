@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score
 data = pd.read_csv("student_bac_path.csv")
 
 #drop student id and bac id
-data = data.drop(['bac_id','student_id'], axis=1)
+data = data.drop(['bac_id','student_id','scholar_year'], axis=1)
 data
 
 
@@ -39,7 +39,6 @@ X['gender'],_  = pd.factorize(X['gender'])
 X['level'],_  = pd.factorize(X['level'])
 X['repeated'],_  = pd.factorize(X['repeated'])
 X['study_path'],_  = pd.factorize(X['study_path'])
-X['scholar_year'],_  = pd.factorize(X['scholar_year'])
 X['bac_year'],_  = pd.factorize(X['bac_year'])
 X['bac_path'],_  = pd.factorize(X['bac_path'])
 X['bac_feedback'],_  = pd.factorize(X['bac_feedback'])
