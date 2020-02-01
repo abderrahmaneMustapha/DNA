@@ -13,7 +13,7 @@ def prepare():
     data = data.drop(['bac_id','student_id','scholar_year'], axis=1)
 
     #enable this comment to see info about data
-    
+
     #data.info()
     Y  =  data['status'].copy()
 
@@ -35,5 +35,5 @@ def prepare():
 
 
     from sklearn.model_selection import train_test_split
-    X_train, X_test, y_train, y_test = train_test_split(X, Y, random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=42)
     return X_train, X_test, y_train, y_test
