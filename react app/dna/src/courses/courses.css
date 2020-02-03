@@ -1,8 +1,18 @@
 .Courses{
     background-color:#2B2450;
     width: 100vw;
-    height: 300vh;
+    height: 100%;
   }
 .Courses *{
       color: #E7E7EB;
   }
+.courses-header h1{
+  width: 50vw;
+  margin: 1em auto 2em auto;
+  text-align: center;
+}
+
+.all-courses-list{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
