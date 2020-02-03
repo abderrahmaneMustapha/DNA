@@ -10,6 +10,8 @@
 - [x] Django app
 - [x] Django rest framework
 - [ ] react app
+- [ ] make readme.md look better
+- [ ] presentation  
 
 ## Installation
 ### Clone
