@@ -32,13 +32,21 @@ class Courses extends React.Component {
 
   courseList = ()=>{
   let courses = this.state.courses
+  console.log(courses[0])
    return courses.map((course)=>
-   <Card  >
-   <Card.Body>
-     {course.cours_id}
-        
-   </Card.Body>
-</Card>
+   <Card >
+    <Card.Header>
+      {course.cours_id}
+      {course.semestre}
+      {course.coef}
+      {course.level}
+      {course.study_field}
+      {course.study_level}
+    </Card.Header>
+    <Card.Body>
+      {course.cours_name}
+    </Card.Body>
+    </Card>
    )
   }
   render(){

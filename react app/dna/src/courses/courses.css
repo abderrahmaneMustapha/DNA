@@ -16,3 +16,13 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
+
+.all-courses-list .card {
+  margin: 2em;
+  border: solid 0.5px #565697;
+}
+
+.all-courses-list .card .card-body{
+ 
+}
+

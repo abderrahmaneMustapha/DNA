@@ -15,7 +15,7 @@ class Profile extends React.Component {
     super();
     this.state = {
       default_student: 14010996874,
-      default_semester: 1,
+      default_semester: 6,
       default_study_field : 17,
       radar_courses : [],
       student__avgs: [],
