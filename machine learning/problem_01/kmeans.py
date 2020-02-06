@@ -1,17 +1,20 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set()
+
+from prepareData import prepare
+X_train, X_test, y_train, y_test = prepare()
 from sklearn.cluster import KMeans
+# kmeans
+kmean = KMeans(n_clusters=3, random_state=0)
+kmean.fit(X_train)
 
-data_x = pd.read_csv('student_master.csv')
-data_y = pd.read_csv('student_master_branchs.csv')
+clusters = X_train
+pred=kmean.predict(X_test)
 
-plt.scatter(data_x['semester_1_avg'], data_x['bac_average'])
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(y_test, pred)
+print(accuracy)
+
+plt.scatter( y_test , X_test[:,4] ,c = pred, cmap='rainbow')
 plt.show()
-
-kmean = KMeans(2)
-kmean.fit(data_x)
-
-clusters = x.copy()
-clusters['cluster_pred']=kmean.fit_predict(x)
