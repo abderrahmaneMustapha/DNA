@@ -15,6 +15,9 @@ def prepare():
     data_x['semsters_avg'] = data_x[['semester_1_avg','semester_2_avg','semester_3_avg',
                                     'semester_4_avg','semester_5_avg','semester_6_avg']].mean(axis=1)
     
+    data_x = data_x.drop(columns=['semester_1_avg','semester_2_avg','semester_3_avg',
+                                    'semester_4_avg','semester_5_avg','semester_6_avg'])
+
     print(data_x.head())
 
     X  = data_x.loc[:,:].values
@@ -28,4 +31,4 @@ def prepare():
 
     from sklearn.model_selection import train_test_split
     x_train , x_test , y_train , y_test = train_test_split(X,Y , test_size = 0.2 , random_state = 40)
-    return  x_train , x_test , y_train , y_test
+    return data_x , data_y , X, Y
