@@ -6,6 +6,7 @@ from prepareData import prepare
 X_train, X_test, y_train, y_test = prepare()
 from sklearn.cluster import KMeans
 # kmeans
+
 kmean = KMeans(n_clusters=3, random_state=0)
 kmean.fit(X_train)
 
@@ -16,5 +17,5 @@ from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, pred)
 print(accuracy)
 
-plt.scatter( y_test , X_test[:,4] ,c = pred, cmap='rainbow')
+plt.scatter( X_test[:,8]  , X_test[:,0] ,c = pred, cmap='rainbow')
 plt.show()

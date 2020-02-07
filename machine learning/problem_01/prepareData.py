@@ -8,7 +8,14 @@ def prepare():
     data_x = pd.read_csv('student_master.csv')
     data_y = pd.read_csv('student_master_branchs.csv')
 
+    #drop unwanted fields
     data_x = data_x.drop(columns=['id_student','gender','nationality','age','bac_wilaya'])
+
+    #calculate semesters avg
+    data_x['semsters_avg'] = data_x[['semester_1_avg','semester_2_avg','semester_3_avg',
+                                    'semester_4_avg','semester_5_avg','semester_6_avg']].mean(axis=1)
+    
+    print(data_x.head())
 
     X  = data_x.loc[:,:].values
     Y  = data_y['title_branch']
