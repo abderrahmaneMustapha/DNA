@@ -59,7 +59,6 @@ clf.score(x_test, y_test)
 
 from sklearn.metrics import accuracy_score
 score =accuracy_score(y_test,pred)
-score
 
 
 
