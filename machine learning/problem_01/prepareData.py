@@ -19,10 +19,11 @@ def prepare():
 
     merge.head()
 
-    merge = merge.drop(columns=['id_student','level','repeated', 'repeated', 'scholar_year', 'bac_id','current_year','study_path','study_level','status'])
+    merge = merge.drop(columns=['id_student','level','repeated', 'repeated', 'scholar_year', 'bac_id','current_year','study_path','study_level','status']).copy()
 
     Y = merge['algo_two'].values
-    X = merge.drop(columns=['algo_two']).values
+    merge = merge.drop(columns=['algo_two'])
+    X  = merge.values
     
     #encode data 
     from sklearn.preprocessing import LabelEncoder

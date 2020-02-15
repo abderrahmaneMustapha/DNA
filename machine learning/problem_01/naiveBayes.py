@@ -14,3 +14,7 @@ pred = clf.predict(X_test)
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, pred)
 print(" accuracy ",accuracy)
+
+
+import joblib 
+joblib.dump(clf,'C:/Users/icom/myProjects/DNA/machine learning//mlModels/problem1_naiveBayes',compress=True)
