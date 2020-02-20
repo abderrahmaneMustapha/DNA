@@ -22,7 +22,29 @@
   border: solid 0.5px #565697;
 }
 
-.all-courses-list .card .card-body{
- 
+
+.all-courses-list .card {
+  display: grid;
+  grid-template-columns: 70% auto;
+  padding: 0.6em 0.8em 1em 0.5em;
 }
 
+.all-courses-list .card div:first-child:first-child,
+.all-courses-list .card div:last-child{
+  font-size: small;
+}
+
+.all-courses-list .card .d-flex{
+  text-align: center;
+   margin: auto;
+}
+
+
+.all-courses-list .card div:last-child{
+  text-align: center;
+}
+
+.all-courses-list .text-uppercase {
+  font-size: xx-large;
+  font-weight: bold;
+}

@@ -35,17 +35,21 @@ class Courses extends React.Component {
   console.log(courses[0])
    return courses.map((course)=>
    <Card >
-    <Card.Header>
-      {course.cours_id}
-      {course.semestre}
-      {course.coef}
-      {course.level}
-      {course.study_field}
-      {course.study_level}
-    </Card.Header>
-    <Card.Body>
-      {course.cours_name}
-    </Card.Body>
+      <div>
+        <p> S <span>{course.semestre}</span> </p>   
+        <div className="d-flex flex-column">
+          <p className="text-uppercase">{course.cours_id}</p>
+          <p className="font-weight-lighter">{course.cours_name}</p>
+          <p>{course.coef}</p>
+        </div>     
+      
+      </div>    
+
+      <div>
+        <p>year : <span>{course.level}</span></p>
+        <p>field : <span>{course.study_field}</span></p>
+      </div>
+   
     </Card>
    )
   }
@@ -66,7 +70,6 @@ class Courses extends React.Component {
             {courseList}
           </div>
         </section>
-      
       </div>
     );
   }
