@@ -6,6 +6,11 @@
 .Courses *{
       color: #E7E7EB;
   }
+
+  .Courses section{
+    border-top:  1px solid #565697;
+    margin: 0.6rem;
+}
 .courses-header h1{
   width: 50vw;
   margin: 1em auto 2em auto;
@@ -48,3 +53,4 @@
   font-size: xx-large;
   font-weight: bold;
 }
+
