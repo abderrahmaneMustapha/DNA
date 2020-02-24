@@ -1,0 +1,22 @@
+{
+  "technicalStatus" : [ {
+    "label" : "development",
+    "code" : "DEV"
+  }, {
+    "label" : "testing",
+    "code" : "TEST"
+  }, {
+    "label" : "production",
+    "code" : "PROD"
+  } ],
+  "documentationStatus" : [ {
+    "label" : "unchecked",
+    "code" : "UCK"
+  }, {
+    "label" : "checked",
+    "code" : "CHK"
+  }, {
+    "label" : "validated",
+    "code" : "VAL"
+  } ]
+}

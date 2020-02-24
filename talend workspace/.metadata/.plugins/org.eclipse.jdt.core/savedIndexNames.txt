@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\icom\myProjects\DNA\talend workspace\.metadata\.plugins\org.eclipse.jdt.core
+2564585934.index
