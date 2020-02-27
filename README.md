@@ -11,7 +11,7 @@
 - [x] Django rest framework
 - [ ] react app
 - [ ] make readme.md look better
-- [ ] presentation  
+- [x] presentation  
 
 ## Installation
 ### Clone
@@ -21,7 +21,7 @@ $ git clone https://github.com/abderrahmaneMustapha/DNA.git
 ```
 ### Setup
 
-> install requirements using
+> install  requirements using
 
 ```shell
 $ pip install -r requirements.txt

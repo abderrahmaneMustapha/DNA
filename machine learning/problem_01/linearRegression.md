@@ -1,3 +1,6 @@
+
+#Linear regression problem 01 
+>import packages
 ```python
 import pandas as pd
 import numpy as np
@@ -5,6 +8,7 @@ import matplotlib.pyplot as plt
 ```
 
 
+>read csv files
 ```python
 bac =  pd.read_csv("student_bac_path.csv")
 algo =  pd.read_csv("result_clean.csv")
