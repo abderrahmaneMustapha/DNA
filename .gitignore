@@ -92,3 +92,5 @@ settings.py
 
 .env
 db.*
+
+node_modules
