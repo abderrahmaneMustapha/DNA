@@ -3,7 +3,6 @@
  
 ## Screenshots
 
-## Installation
 > dashboard :
 
 ![Alt text](/screenshots/dashboard.gif?raw=true )
@@ -12,6 +11,9 @@
 > profile :
 
 ![Alt text](/screenshots/profile.gif?raw=true )
+
+
+## Installation
 ### Clone
 > Clone this repo to your local machine using :
 ```shell
