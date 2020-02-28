@@ -1,19 +1,17 @@
 # DNA
 >  is a university analytics web app
-## TODO
-- [x] Collect Data
-- [x] Clean Data
-- [ ] get city from student adress
-- [x] Data warehouse
-- [x] Data Selection
-- [ ] Machine Learning
-- [x] Django app
-- [x] Django rest framework
-- [ ] react app
-- [ ] make readme.md look better
-- [x] presentation  
+ 
+## Screenshots
 
 ## Installation
+> dashboard :
+
+![Alt text](/screenshots/dashboard.gif?raw=true )
+
+
+> profile :
+
+![Alt text](/screenshots/profile.gif?raw=true )
 ### Clone
 > Clone this repo to your local machine using :
 ```shell
@@ -33,6 +31,19 @@ $ pip install -r requirements.txt
 | :---: | :---: | :---:| :---: |
 | [![FVCproductions](https://avatars1.githubusercontent.com/u/34008130?v=4&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/47328719?v=4&s=200)](http://fvcproductions.com) |  [![FVCproductions](https://avatars3.githubusercontent.com/u/36542439?s=200&v=4)](http://fvcproductions.com) |[![FVCproductions](https://avatars0.githubusercontent.com/u/43323803?s=200&v=4)](http://fvcproductions.com) |
 | <a href="https://github.com/abderrahmaneMustapha" target="_blank">`github.com/abderrahmaneMustapha`</a> | <a href="https://github.com/Alilougt" target="_blank">`github.com/Alilougt`</a> |  <a href="https://github.com/larachiAbdelhadi" target="_blank">`github.com/larachiAbdelhadi`</a> |  <a href="https://github.com/yassmineboussafi" target="_blank">`github.com/yassmineboussafi`</a> |  
+
+## History
+- [x] Collect Data
+- [x] Clean Data
+- [ ] get city from student adress
+- [x] Data warehouse
+- [x] Data Selection
+- [ ] Machine Learning
+- [x] Django app
+- [x] Django rest framework
+- [ ] react app
+- [ ] make readme.md look better
+- [x] presentation 
 
 ## Contributing
 
