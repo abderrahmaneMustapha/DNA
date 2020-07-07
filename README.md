@@ -29,10 +29,10 @@ $ pip install -r requirements.txt
 
 ### Team
 
-| <a href="http://learno.com" target="_blank">Toumi Abderrahmane</a> | <a href="http://learno.com" target="_blank">Kouriba Ali</a> |  <a href="http://learno.com" target="_blank">Larachi Abdelhado</a> | <a href="http://learno.com" target="_blank">Yassmine boussafi</a> | 
-| :---: | :---: | :---:| :---: |
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/34008130?v=4&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/47328719?v=4&s=200)](http://fvcproductions.com) |  [![FVCproductions](https://avatars3.githubusercontent.com/u/36542439?s=200&v=4)](http://fvcproductions.com) |[![FVCproductions](https://avatars0.githubusercontent.com/u/43323803?s=200&v=4)](http://fvcproductions.com) |
-| <a href="https://github.com/abderrahmaneMustapha" target="_blank">`github.com/abderrahmaneMustapha`</a> | <a href="https://github.com/Alilougt" target="_blank">`github.com/Alilougt`</a> |  <a href="https://github.com/larachiAbdelhadi" target="_blank">`github.com/larachiAbdelhadi`</a> |  <a href="https://github.com/yassmineboussafi" target="_blank">`github.com/yassmineboussafi`</a> |  
+| <a href="http://learno.com" target="_blank">Toumi Abderrahmane</a> | 
+| :---: | 
+| [![FVCproductions](https://avatars1.githubusercontent.com/u/34008130?v=4&s=200)](http://fvcproductions.com)  |
+| <a href="https://github.com/abderrahmaneMustapha" target="_blank">`github.com/abderrahmaneMustapha`</a> | 
 
 ## History
 - [x] Collect Data
