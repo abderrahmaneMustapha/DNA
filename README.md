@@ -40,11 +40,11 @@ $ pip install -r requirements.txt
 - [ ] get city from student adress
 - [x] Data warehouse
 - [x] Data Selection
-- [ ] Machine Learning
+- [x] Machine Learning
 - [x] Django app
 - [x] Django rest framework
-- [ ] react app
-- [ ] make readme.md look better
+- [x] react app
+- [x] make readme.md look better
 - [x] presentation 
 
 ## Contributing
