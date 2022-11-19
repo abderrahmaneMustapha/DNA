@@ -18,7 +18,7 @@
     "react-dom": "^16.12.0",
     "react-heatmap-grid": "^0.8.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
+    "react-scripts": "5.0.1",
     "react-search": "^2.1.1"
   },
   "scripts": {
